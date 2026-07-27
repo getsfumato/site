@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <rect width="16" height="16" fill="#0b0908"/>
+  <!-- pixel S on a 2px grid, diagonal joins at the corners so it stays legible
+       at 16px where a curve would just turn to mud -->
+  <g fill="#cba053">
+    <rect x="5"  y="1"  width="8" height="2"/>
+    <rect x="3"  y="3"  width="2" height="2"/>
+    <rect x="3"  y="5"  width="2" height="2"/>
+    <rect x="5"  y="7"  width="6" height="2"/>
+    <rect x="11" y="9"  width="2" height="2"/>
+    <rect x="11" y="11" width="2" height="2"/>
+    <rect x="3"  y="13" width="8" height="2"/>
+  </g>
+</svg>
