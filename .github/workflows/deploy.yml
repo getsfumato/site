@@ -1,0 +1,85 @@
+# Deploys master to Vercel production.
+#
+# Self-bootstrapping: the first run creates the project, so there is no need to
+# create anything by hand first. It uses the Vercel CLI rather than Vercel's Git
+# integration because the project is not linked to this repository — if you ever
+# do link it in the dashboard, delete this workflow or you will get two
+# deployments per push.
+#
+# Requires one repository secret:
+#   VERCEL_TOKEN   https://vercel.com/account/settings/tokens  (scope: full account)
+
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# A newer push makes an in-flight deploy pointless.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: team_zMspyAny9GYZoXfUAnartTF5
+  VERCEL_PROJECT_NAME: sfumato-landing
+
+jobs:
+  deploy:
+    name: production
+    runs-on: ubuntu-latest
+    # The token is exposed as an env var rather than interpolated into each run
+    # block, so it is never spliced into a shell command line.
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Fail early if the token is missing
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::VERCEL_TOKEN is not set. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+
+      - name: Ensure the project exists
+        run: |
+          # The first run creates it; every later run reports that it already
+          # exists, which is not an error. Anything else is, and must stop here
+          # rather than fail confusingly two steps later.
+          if ! out=$(vercel project add "$VERCEL_PROJECT_NAME" --token="$VERCEL_TOKEN" 2>&1); then
+            echo "$out"
+            echo "$out" | grep -qi 'already exists' || exit 1
+            echo "project already exists — continuing"
+          fi
+
+      - name: Link the checkout to the project
+        run: vercel link --yes --project "$VERCEL_PROJECT_NAME" --token="$VERCEL_TOKEN"
+
+      - name: Pull production settings
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+
+      - name: Build
+        run: vercel build --prod --token="$VERCEL_TOKEN"
+
+      - name: Deploy
+        run: |
+          url=$(vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN")
+          echo "$url"
+          {
+            echo "### Deployed"
+            echo
+            echo "<$url>"
+          } >> "$GITHUB_STEP_SUMMARY"
