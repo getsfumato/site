@@ -91,9 +91,17 @@ export default function InstallCommand() {
           </AnimatePresence>
         </motion.button>
       </div>
+      {/* The honest status, not a footnote. There are no tagged releases yet, so the
+          script's fast path falls through to `cargo install --git` — which works today,
+          but takes a Rust toolchain and a few minutes. Saying so here costs nothing with
+          an audience that reads install scripts before running them, and a visitor who
+          discovers it only after piping to a shell has been misled by omission. */}
+      <p className="install__status">
+        <strong>Pre-release.</strong> No tagged builds yet, so this compiles from source and
+        needs a Rust toolchain. macOS and Linux; Apple&nbsp;Silicon, x86_64, aarch64.
+      </p>
       <p className="install__alt">
-        macOS &amp; Linux · Apple Silicon, x86_64, aarch64 ·{' '}
-        <a href="https://github.com/getsfumato/cli#quick-start">build from source</a>
+        <a href="https://github.com/getsfumato/cli#quick-start">Build it by hand instead</a>
       </p>
     </section>
   );

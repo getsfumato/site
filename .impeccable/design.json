@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-02T00:00:00.000Z",
+  "title": "Design System: sfumato",
+  "extensions": {
+    "colorMeta": {
+      "gold": {
+        "role": "primary",
+        "displayName": "Halo Gold",
+        "canonical": "oklch(72.4% 0.094 79.8)",
+        "tonalRamp": [
+          "oklch(15% 0.094 79.8)",
+          "oklch(26% 0.094 79.8)",
+          "oklch(37% 0.094 79.8)",
+          "oklch(48% 0.094 79.8)",
+          "oklch(59% 0.094 79.8)",
+          "oklch(72% 0.094 79.8)",
+          "oklch(84% 0.094 79.8)",
+          "oklch(95% 0.094 79.8)"
+        ]
+      },
+      "gold-soft": {
+        "role": "primary",
+        "displayName": "Lit Gold",
+        "canonical": "oklch(69.1% 0.062 82.1)",
+        "tonalRamp": [
+          "oklch(15% 0.062 82.1)",
+          "oklch(26% 0.062 82.1)",
+          "oklch(37% 0.062 82.1)",
+          "oklch(48% 0.062 82.1)",
+          "oklch(59% 0.062 82.1)",
+          "oklch(69% 0.062 82.1)",
+          "oklch(83% 0.062 82.1)",
+          "oklch(95% 0.062 82.1)"
+        ]
+      },
+      "gold-dim": {
+        "role": "primary",
+        "displayName": "Patina Gold",
+        "canonical": "oklch(61.3% 0.070 79.4)",
+        "tonalRamp": [
+          "oklch(15% 0.070 79.4)",
+          "oklch(26% 0.070 79.4)",
+          "oklch(37% 0.070 79.4)",
+          "oklch(48% 0.070 79.4)",
+          "oklch(61% 0.070 79.4)",
+          "oklch(72% 0.070 79.4)",
+          "oklch(84% 0.070 79.4)",
+          "oklch(95% 0.070 79.4)"
+        ]
+      },
+      "gold-deep": {
+        "role": "primary",
+        "displayName": "Deep Ochre",
+        "canonical": "oklch(51.0% 0.098 74.6)",
+        "tonalRamp": [
+          "oklch(15% 0.098 74.6)",
+          "oklch(26% 0.098 74.6)",
+          "oklch(37% 0.098 74.6)",
+          "oklch(51% 0.098 74.6)",
+          "oklch(62% 0.098 74.6)",
+          "oklch(73% 0.098 74.6)",
+          "oklch(84% 0.098 74.6)",
+          "oklch(95% 0.098 74.6)"
+        ]
+      },
+      "slate": {
+        "role": "secondary",
+        "displayName": "Varnished Lapis",
+        "canonical": "oklch(56.8% 0.021 259.8)",
+        "tonalRamp": [
+          "oklch(15% 0.021 259.8)",
+          "oklch(26% 0.021 259.8)",
+          "oklch(37% 0.021 259.8)",
+          "oklch(48% 0.021 259.8)",
+          "oklch(57% 0.021 259.8)",
+          "oklch(70% 0.021 259.8)",
+          "oklch(83% 0.021 259.8)",
+          "oklch(95% 0.021 259.8)"
+        ]
+      },
+      "ink-000": {
+        "role": "neutral",
+        "displayName": "Cave Black",
+        "canonical": "oklch(7.4% 0.003 55.0)",
+        "tonalRamp": [
+          "oklch(7% 0.003 55.0)",
+          "oklch(18% 0.003 55.0)",
+          "oklch(29% 0.003 55.0)",
+          "oklch(40% 0.003 55.0)",
+          "oklch(51% 0.003 55.0)",
+          "oklch(62% 0.003 55.0)",
+          "oklch(78% 0.003 55.0)",
+          "oklch(95% 0.003 55.0)"
+        ]
+      },
+      "ink-050": {
+        "role": "neutral",
+        "displayName": "Ground Black",
+        "canonical": "oklch(9.1% 0.004 58.0)",
+        "tonalRamp": [
+          "oklch(9% 0.004 58.0)",
+          "oklch(20% 0.004 58.0)",
+          "oklch(31% 0.004 58.0)",
+          "oklch(42% 0.004 58.0)",
+          "oklch(53% 0.004 58.0)",
+          "oklch(64% 0.004 58.0)",
+          "oklch(79% 0.004 58.0)",
+          "oklch(95% 0.004 58.0)"
+        ]
+      },
+      "ink-100": {
+        "role": "neutral",
+        "displayName": "Umber Black",
+        "canonical": "oklch(12.6% 0.008 71.0)",
+        "tonalRamp": [
+          "oklch(13% 0.008 71.0)",
+          "oklch(23% 0.008 71.0)",
+          "oklch(34% 0.008 71.0)",
+          "oklch(45% 0.008 71.0)",
+          "oklch(56% 0.008 71.0)",
+          "oklch(67% 0.008 71.0)",
+          "oklch(81% 0.008 71.0)",
+          "oklch(95% 0.008 71.0)"
+        ]
+      },
+      "ivory": {
+        "role": "neutral",
+        "displayName": "Lit Ivory",
+        "canonical": "oklch(90.7% 0.017 85.0)",
+        "tonalRamp": [
+          "oklch(15% 0.017 85.0)",
+          "oklch(26% 0.017 85.0)",
+          "oklch(37% 0.017 85.0)",
+          "oklch(48% 0.017 85.0)",
+          "oklch(59% 0.017 85.0)",
+          "oklch(70% 0.017 85.0)",
+          "oklch(81% 0.017 85.0)",
+          "oklch(91% 0.017 85.0)"
+        ]
+      },
+      "ivory-dim": {
+        "role": "neutral",
+        "displayName": "Veiled Ivory",
+        "canonical": "oklch(74.5% 0.017 87.0)",
+        "tonalRamp": [
+          "oklch(15% 0.017 87.0)",
+          "oklch(26% 0.017 87.0)",
+          "oklch(37% 0.017 87.0)",
+          "oklch(48% 0.017 87.0)",
+          "oklch(59% 0.017 87.0)",
+          "oklch(75% 0.017 87.0)",
+          "oklch(86% 0.017 87.0)",
+          "oklch(95% 0.017 87.0)"
+        ]
+      },
+      "ivory-mute": {
+        "role": "neutral",
+        "displayName": "Muted Ivory",
+        "canonical": "oklch(59.5% 0.017 84.0)",
+        "tonalRamp": [
+          "oklch(15% 0.017 84.0)",
+          "oklch(26% 0.017 84.0)",
+          "oklch(37% 0.017 84.0)",
+          "oklch(48% 0.017 84.0)",
+          "oklch(60% 0.017 84.0)",
+          "oklch(71% 0.017 84.0)",
+          "oklch(83% 0.017 84.0)",
+          "oklch(95% 0.017 84.0)"
+        ]
+      },
+      "ivory-faint": {
+        "role": "neutral",
+        "displayName": "Faint Ivory",
+        "canonical": "oklch(54.2% 0.019 83.0)",
+        "tonalRamp": [
+          "oklch(15% 0.019 83.0)",
+          "oklch(26% 0.019 83.0)",
+          "oklch(37% 0.019 83.0)",
+          "oklch(48% 0.019 83.0)",
+          "oklch(54% 0.019 83.0)",
+          "oklch(70% 0.019 83.0)",
+          "oklch(82% 0.019 83.0)",
+          "oklch(95% 0.019 83.0)"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(233, 225, 209, 0.1)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The wordmark, once per surface. Solid Lit Ivory with a 26px gold drop-shadow so the pixel squares read as lit rather than printed. A clipped gradient was removed: it used gold as paint rather than as light, and gradient display type is the most recognisable generated-page tell there is."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "The one step below body, shared by the spec list's values and the footer note so the footer does not invent its own size."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "The attribution credit, and the lower endpoint of the install command's fluid size on the narrowest phones."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Beat enumeration in Halo Gold, sized at exactly two mono cells (22px). The recurrence is what converts Pixel from a lone exotic into structure."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Beat headings. Deliberately small — the artefact beside the heading carries the visual weight, not the heading."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The single opening paragraph, capped at 44ch. <em> inside it is not italic; it becomes weight 400 in Lit Ivory."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Beat prose. Carries no max-width of its own — the grid column is the measure. <em> switches to Mono at 0.9em so technical terms borrow the machine voice instead of leaning."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Every machine-voiced label: eyebrows, beat tags, spec keys, nav links. One size (one mono cell), one case, one tracking (0.16em), no exceptions."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Shell snippets and the install command."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "The specimen's measured numeric labels at 9px, tabular so digits do not shuffle sideways, with a text-shadow so they survive over the figure."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-lift",
+        "value": "0 1px 0 rgba(233, 225, 209, 0.05) inset, 0 18px 44px -22px rgba(0, 0, 0, 0.9)",
+        "purpose": "The install row only, and recorded as an outlier rather than doctrine. Depth in this system is emergence, not lift; do not propagate this to a second element."
+      },
+      {
+        "name": "wordmark-glow",
+        "value": "drop-shadow(0 0 26px rgba(203, 160, 83, 0.22))",
+        "purpose": "Light, not shade. Makes the wordmark's pixel squares read as lit rather than printed."
+      },
+      {
+        "name": "readout-legibility",
+        "value": "text-shadow: 0 1px 4px rgba(8, 7, 6, 0.9)",
+        "purpose": "Functional only: keeps 9px mono readable over the specimen figure."
+      },
+      {
+        "name": "specimen-pool",
+        "value": "radial-gradient(58% 46% at 50% 46%, rgba(148, 103, 18, 0.16), transparent 72%)",
+        "purpose": "A warm pool of light under the figure so it does not read as pasted on. The system's substitute for a shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "The single easing curve for every transition and entrance on the page."
+      },
+      {
+        "name": "entrance",
+        "value": "surface 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) both",
+        "purpose": "opacity 0-1, translateY 14px-0, blur 7px-0. CSS keyframes by requirement, never JS: a content-hiding entrance must degrade to visible."
+      },
+      {
+        "name": "state",
+        "value": "0.2s cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "Hover and focus colour transitions on links and buttons."
+      },
+      {
+        "name": "underline-wipe",
+        "value": "transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "scaleX(0-1) from transform-origin left on nav link underlines."
+      },
+      {
+        "name": "layer-crossfade",
+        "value": "700-900ms cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "The GL layer fading in over its server-rendered fallback, in the field (900ms) and the specimen (700ms)."
+      },
+      {
+        "name": "press-spring",
+        "value": "spring(stiffness 500, damping 30) to scale 0.94",
+        "purpose": "The copy button's press. Motion library, permitted because it moves something already visible."
+      },
+      {
+        "name": "parallax-spring",
+        "value": "spring(stiffness 60, damping 18, mass 0.6) over +/-10px",
+        "purpose": "Pointer-led drift on the mark, so it lags the cursor and settles rather than snapping. Disabled for coarse pointers and reduced motion."
+      },
+      {
+        "name": "chain-period",
+        "value": "6000ms per revolution, continuous",
+        "purpose": "The epicycle chain never stops. A one-shot animation makes the epicycles invisible to anyone arriving a few seconds late, which defeats the point of showing them."
+      },
+      {
+        "name": "reticle-breath",
+        "value": "5.5s alternate infinite, border-color 0.16-0.46 alpha, staggered negative delays",
+        "purpose": "The specimen's measurement boxes, so the plate reads as being actively read."
+      }
+    ],
+    "breakpoints": [
+      { "name": "artefact-drops", "value": "68rem" },
+      { "name": "hero-stacks", "value": "52rem" },
+      { "name": "rail-becomes-header", "value": "44rem" },
+      { "name": "narrow", "value": "30rem" },
+      { "name": "narrowest", "value": "22rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Install Row",
+      "kind": "custom",
+      "refersTo": "install-row",
+      "description": "The page's primary call to action and the only lifted object in the system: a real, selectable shell command with a gold prompt and a text-button copy action.",
+      "html": "<div class=\"ds-install-row\"><code class=\"ds-install-cmd\"><span class=\"ds-install-prompt\">$</span> curl -fsSL https://sfumato.sh/install.sh | sh</code><button class=\"ds-copy\" type=\"button\">copy</button></div>",
+      "css": ".ds-install-row { display: flex; align-items: stretch; width: 100%; max-width: 30rem; border: 1px solid rgba(203, 160, 83, 0.2); border-radius: 10px; background: linear-gradient(180deg, rgba(37, 31, 24, 0.72), rgba(11, 9, 8, 0.82)); backdrop-filter: blur(14px) saturate(120%); -webkit-backdrop-filter: blur(14px) saturate(120%); box-shadow: 0 1px 0 rgba(233, 225, 209, 0.05) inset, 0 18px 44px -22px rgba(0, 0, 0, 0.9); overflow: hidden; transition: border-color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); } .ds-install-row:hover { border-color: rgba(203, 160, 83, 0.34); } .ds-install-cmd { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 0.6em; padding: 0.85rem 0.5rem 0.85rem 1rem; font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.8125rem; color: var(--ivory, #e9e1d1); white-space: nowrap; overflow-x: auto; scrollbar-width: none; } .ds-install-cmd::-webkit-scrollbar { display: none; } .ds-install-prompt { color: var(--gold, #cba053); user-select: none; flex: none; } .ds-copy { flex: none; appearance: none; border: 0; border-left: 1px solid rgba(203, 160, 83, 0.18); margin: 0; padding: 0 1.1rem; background: transparent; color: var(--gold-dim, #a28757); font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.75rem; letter-spacing: 0.08em; cursor: pointer; transition: color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), background-color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1); } .ds-copy:hover { color: var(--gold, #cba053); background: rgba(203, 160, 83, 0.08); } .ds-copy:active { transform: scale(0.94); } .ds-copy:focus-visible { outline: 2px solid var(--gold, #cba053); outline-offset: -2px; }"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "The system's only button, and it is a text button: no fill, no icon, no toast. The label itself is the feedback (copy to copied, or select it when the clipboard is unavailable).",
+      "html": "<button class=\"ds-btn-copy\" type=\"button\">copy</button>",
+      "css": ".ds-btn-copy { appearance: none; border: 0; border-left: 1px solid rgba(203, 160, 83, 0.18); margin: 0; padding: 0.85rem 1.1rem; background: transparent; color: var(--gold-dim, #a28757); font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.75rem; letter-spacing: 0.08em; border-radius: 0; cursor: pointer; transition: color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), background-color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.12s cubic-bezier(0.22, 0.61, 0.36, 1); } .ds-btn-copy:hover { color: var(--gold, #cba053); background: rgba(203, 160, 83, 0.08); } .ds-btn-copy:focus-visible { outline: 2px solid var(--gold, #cba053); outline-offset: -2px; } .ds-btn-copy:active { transform: scale(0.94); }"
+    },
+    {
+      "name": "Shell Snippet",
+      "kind": "custom",
+      "refersTo": "snippet",
+      "description": "A command as an artefact: marked by one left border in gold rather than four sides, with a gold prompt and a muted continuation line.",
+      "html": "<pre class=\"ds-snippet\"><code><span class=\"ds-snippet-prompt\">$</span> sfumato generate slides ./notes\n<span class=\"ds-snippet-cont\">    --instruction \"Explain Fourier series visually\"</span></code></pre>",
+      "css": ".ds-snippet { margin: 0; padding: 0.75rem 1.25rem; overflow-x: auto; border-left: 1px solid rgba(203, 160, 83, 0.22); border-radius: 0; background: rgba(18, 16, 13, 0.5); font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.75rem; line-height: 1.7; color: var(--ivory-dim, #b9b2a0); scrollbar-width: none; } .ds-snippet::-webkit-scrollbar { display: none; } .ds-snippet-prompt { color: var(--gold, #cba053); user-select: none; } .ds-snippet-cont { color: var(--ivory-mute, #8c8578); }"
+    },
+    {
+      "name": "Beat",
+      "kind": "card",
+      "refersTo": "beat",
+      "description": "The page's only structural unit, and deliberately not a card: a rail carrying a Pixel numeral and a mono tag, a narrow copy column that is itself the measure, and a wide artefact column. Separated by one hairline, never a surface.",
+      "html": "<section class=\"ds-beat\"><p class=\"ds-beat-index\"><span class=\"ds-beat-num\">02</span><span class=\"ds-beat-tag\">inspected</span></p><div class=\"ds-beat-body\"><h2 class=\"ds-beat-title\">Then it checks its own work.</h2><p class=\"ds-prose\">Nothing ships on the first draft. Every resource gets validated, opened and looked at, and a correction is kept only when it actually makes the result better.</p></div><div class=\"ds-beat-aside\"><ul class=\"ds-spec\"><li><span class=\"ds-spec-key\">decks</span> slides with diagrams and maths</li><li><span class=\"ds-spec-key\">pages</span> one self-contained HTML file</li></ul></div></section>",
+      "css": ".ds-beat { display: grid; grid-template-columns: 4.5rem minmax(0, 24rem) minmax(0, 1fr); gap: 0 3.5rem; align-items: start; padding-block: 3.25rem; border-top: 1px solid rgba(233, 225, 209, 0.1); border-radius: 0; } .ds-beat-index { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.2rem; } .ds-beat-num { font-family: var(--font-pixel, ui-monospace, monospace); font-size: 1.375rem; line-height: 1; color: var(--gold, #cba053); } .ds-beat-tag { font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-faint, #6b6558); } .ds-beat-title { margin: 0; font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif); font-weight: 400; font-size: 1.5rem; line-height: 1.28; letter-spacing: -0.01em; color: var(--ivory, #e9e1d1); text-wrap: balance; } .ds-prose { margin: 1.25rem 0 0; font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif); font-weight: 300; font-size: 0.9375rem; line-height: 1.68; color: var(--ivory-dim, #b9b2a0); text-wrap: pretty; } .ds-spec { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif); font-size: 0.875rem; color: var(--ivory-dim, #b9b2a0); } .ds-spec li { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0.75rem; align-items: baseline; } .ds-spec-key { font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dim, #a28757); } @media (max-width: 68rem) { .ds-beat { grid-template-columns: 4.5rem minmax(0, 1fr); row-gap: 1.25rem; } .ds-beat-aside { grid-column: 2; } }"
+    },
+    {
+      "name": "Install Status",
+      "kind": "custom",
+      "refersTo": "install-row",
+      "description": "The pre-release disclosure beneath the install command, at the weight a reader deserves rather than as a faint aside. The mono label leads in Patina Gold and is the only strong element on the page; it replaced an eyebrow that reported the logo's harmonic count.",
+      "html": "<p class=\"ds-install-status\"><strong>Pre-release.</strong> No tagged builds yet, so this compiles from source and needs a Rust toolchain. macOS and Linux; Apple Silicon, x86_64, aarch64.</p>",
+      "css": ".ds-install-status { margin: 0.75rem 0 0; max-width: 34rem; font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif); font-weight: 300; font-size: 0.75rem; line-height: 1.65; color: var(--ivory-dim, #b9b2a0); } .ds-install-status strong { font-weight: 400; font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dim, #a28757); }"
+    },
+    {
+      "name": "Footer Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "The only navigation on the site. Mono label voice, undecorated at rest, with a gold underline that wipes in from the left on hover.",
+      "html": "<nav class=\"ds-links\" aria-label=\"Project links\"><a href=\"#\">source</a><a href=\"#\">docs</a><a href=\"#\">releases</a></nav>",
+      "css": ".ds-links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.5rem; } .ds-links a { position: relative; font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ivory-mute, #8c8578); text-decoration: none; padding: 0.2rem 0; border-radius: 0; transition: color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1); } .ds-links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold, #cba053); transform: scaleX(0); transform-origin: left; transition: transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1); } .ds-links a:hover { color: var(--ivory, #e9e1d1); } .ds-links a:hover::after { transform: scaleX(1); } .ds-links a:focus-visible { outline: 2px solid var(--gold, #cba053); outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Reticle",
+      "kind": "custom",
+      "refersTo": "reticle",
+      "description": "The signature instrument mark: corner ticks rather than a frame, breathing on a 5.5s alternating cycle, with a tabular measured readout above it. Reads as a measurement being taken, not a box around something.",
+      "html": "<div class=\"ds-reticle-stage\"><div class=\"ds-reticle\"><span class=\"ds-reticle-label\"><span class=\"ds-reticle-block\">04</span><span>&mu; 0.412</span><span>&nabla; 0.025</span></span></div></div>",
+      "css": ".ds-reticle-stage { position: relative; width: 100%; height: 120px; background: radial-gradient(58% 46% at 50% 46%, rgba(148, 103, 18, 0.16), transparent 72%); } .ds-reticle { position: absolute; left: 22%; top: 38%; width: 34%; height: 38%; border: 1px solid rgba(233, 225, 209, 0.34); animation: ds-reticle-breath 5.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite alternate; } @keyframes ds-reticle-breath { from { border-color: rgba(233, 225, 209, 0.16); } to { border-color: rgba(233, 225, 209, 0.46); } } .ds-reticle::before, .ds-reticle::after { content: ''; position: absolute; width: 5px; height: 5px; border: 1px solid var(--gold, #cba053); opacity: 0.55; } .ds-reticle::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; } .ds-reticle::after { right: -1px; bottom: -1px; border-left: 0; border-top: 0; } .ds-reticle-label { position: absolute; bottom: calc(100% + 3px); left: 0; display: flex; gap: 0.5em; align-items: baseline; white-space: nowrap; font-family: var(--font-mono, ui-monospace, monospace); font-size: 0.5625rem; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; color: var(--ivory-dim, #b9b2a0); text-shadow: 0 1px 4px rgba(8, 7, 6, 0.9); } .ds-reticle-block { color: var(--gold-dim, #a28757); } @media (prefers-reduced-motion: reduce) { .ds-reticle { animation: none; } }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The identity voice: Geist Pixel Square in solid Lit Ivory with a wide soft gold glow, so the pixel squares read as lit rather than printed. Gold arrives as light, never as paint clipped into the letterforms.",
+      "html": "<h1 class=\"ds-wordmark\">sfumato</h1>",
+      "css": ".ds-wordmark { margin: 0; font-family: var(--font-pixel, ui-monospace, monospace); font-weight: 400; font-size: clamp(2.75rem, 9vw, 8.25rem); line-height: 0.86; letter-spacing: 0.02em; color: var(--ivory, #e9e1d1); filter: drop-shadow(0 0 26px rgba(203, 160, 83, 0.22)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Measured Leonardo",
+    "overview": "A conservation lab at night. A five-century-old painting is the subject; the page is the instrument reading it. That gives every element one of exactly two jobs: it is either the painting — warm, varnished, tonally continuous, emerging from near-black rather than sitting on it — or it is the instrument — mono, uppercase, widely tracked, hairline-thin, tabular, and utterly unhurried. The tension between those two registers is the identity, and it is the same tension the product's name describes: a machine looking very closely at gradation it cannot draw a line through.\n\nNothing here is decided by taste where it could be decided by measurement. The palette is sampled from the three source paintings by k-means in CIELab, not eyeballed from them — which is why the lapis reads as desaturated slate rather than the ultramarine memory supplies, and why ochre-gold rather than any brand hue is the accent. The wordmark is not drawn, it is reconstructed: a letterform run through a DFT and rebuilt from its own harmonics, still orbiting. The specimen's readouts are genuinely measured off the pixels underneath them. That provenance is load-bearing. A future contributor who substitutes a plausible-looking value for a measured one has broken the system even if it looks identical.\n\nDensity is low and deliberate; the page breathes in one continuous descent with no panels, no cards, and no sections that announce themselves. Depth is atmospheric, never physical: things surface out of darkness. There is exactly one flat colour of light — a warm gold — and it is rationed hard enough that its every appearance reads as emphasis.",
+    "keyCharacteristics": [
+      "Warm near-black ground (#0b0908), never neutral grey and never cool.",
+      "One accent hue, ochre-gold, sampled from the Baptism's halos.",
+      "Three type faces, one job each, zero overlap.",
+      "Hairlines and rules instead of borders, cards, and boxes.",
+      "Depth by emergence — atmosphere, masks and light pools, not shadows.",
+      "Every number on screen is measured, or it is not on screen."
+    ],
+    "rules": [
+      {
+        "name": "The Rationed Light Rule",
+        "body": "Gold is light, not paint. It appears as thin strokes, small marks, single glyphs, and gradient passages — never as a filled button, badge, panel, or block. If a gold region is large enough to read as a shape, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm Ground Rule",
+        "body": "Every dark value in this system has more red than blue. There is no neutral grey and no cool black anywhere in the palette. A #0a0a0a or a slate-950 is an immediate identity break, however subtle it looks alone.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three-Tier Text Rule",
+        "body": "Language descends through exactly three ivories — Lit for emphasis, Veiled for prose, Muted for chrome — and a fourth (Faint) only for attribution and tags. Reaching for an opacity on ivory instead of the next tier down fragments the ramp.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Job Rule",
+        "body": "Pixel is identity and enumeration. Mono is machine surfaces. Sans is human language. No face ever takes another's job. Sans never becomes chrome; Mono never sets prose; Pixel never appears outside the wordmark and the numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cell Rule",
+        "body": "Every Pixel size is an exact multiple of the 11px mono cell — 2 cells for the numerals, 4-12 for the wordmark. The pixel grid and the mono grid never drift out of step, which is why they read as one system rather than two fonts.",
+        "section": "typography"
+      },
+      {
+        "name": "The Recurrence Rule",
+        "body": "Pixel must appear at least three times on any surface that uses it at all. Used once it reads as a lone exotic; the repetition down the page is what converts it from decoration into structure.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Label Voice Rule",
+        "body": "Every mono label shares one size, one case, and 0.16em tracking. That repetition is most of what makes unrelated regions feel like one page. A label at a different size is a new voice, and there is no budget for one.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Measure Rule",
+        "body": "The reading measure is enforced by the grid column, never by a max-width on the paragraph. A second constraint inside an already-narrow column is what left a third of every beat empty in an earlier pass.",
+        "section": "layout"
+      },
+      {
+        "name": "The No Panels Rule",
+        "body": "Regions are separated by a hairline and vertical rhythm, never by a surface. If a section needs a background to be legible as a section, the rhythm is wrong.",
+        "section": "layout"
+      },
+      {
+        "name": "The Emergence Rule",
+        "body": "Depth is produced by masks, screen blending, gradients and light pools — never by box-shadow. If a new element needs to feel raised, give it light or give it space; do not give it a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Edges Rule",
+        "body": "Imagery in this system has no boundary. Every plate is masked to transparency and the specimen's alpha is faded per-edge (20% at the foot where the crop cuts through solid chest, 10% at the flanks, near zero at the crown) precisely because alpha alone cannot remove a crop. A rectangular image edge anywhere is a defect.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Edge Rule",
+        "body": "When something needs marking off, mark one side. A left border, a top rule, two corner ticks. Four borders make a card, and there are no cards here.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Visible-By-Default Rule",
+        "body": "Any animation whose start state hides content must be authored in CSS. JavaScript may only move, colour, or spring things that are already visible.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep every dark value warmer than neutral — more red than blue, in the #080706 / #0b0908 / #12100d family.",
+      "Do ration Halo Gold (#cba053) to thin strokes, small marks and single glyphs. If a gold region reads as a shape, reduce it.",
+      "Do size every Pixel occurrence as an exact multiple of the 0.6875rem cell, and make it recur at least three times per surface.",
+      "Do give every mono label the same size, uppercase, and 0.16em tracking.",
+      "Do let the grid column set the measure and leave .prose without a max-width.",
+      "Do mark structure with one edge — a left border, a top hairline, two corner ticks.",
+      "Do produce depth with masks, screen blending, gradients and pools of light.",
+      "Do author any content-hiding entrance as CSS keyframes with animation-fill-mode: both.",
+      "Do ship a server-rendered fallback beneath every GL layer, and freeze motion under prefers-reduced-motion.",
+      "Do measure any number that appears on screen, from the pixels actually underneath it, and use tabular-nums wherever digits change."
+    ],
+    "donts": [
+      "Don't import generic dark-SaaS chrome: no violet or blue gradient buttons, no glass cards in rows, no neon borders, no purple-on-black. A cool accent destroys the warm-earth identity instantly, and this palette was sampled rather than chosen — it is not a preference to be traded.",
+      "Don't add a fourth type voice, and don't let an existing face take another's job. Sans never becomes chrome, Mono never sets prose, Pixel never appears outside the wordmark and the enumeration.",
+      "Don't present the paintings as framed imagery — no bordered image, card, carousel, lightbox, or museum caption. They are ground and specimen, masked and dissolved. Any visible rectangular image edge is a defect.",
+      "Don't invent numbers. No fabricated metrics, confidence scores, percentages, or decorative readouts. The specimen's mean luminance and mean gradient magnitude are real; a plausible-looking substitute would have been easier and would have meant nothing.",
+      "Don't clip a gradient into text, on the wordmark or anywhere else. Gold is light; emphasis comes from size, weight, and the glow.",
+      "Don't put a label above or beneath a heading to introduce it. The heading carries its own weight, and the slot fills with decoration every time it exists — it held a harmonic count measuring the logo before it was removed.",
+      "Don't let any text colour fall below Faint Ivory (#827b6a, 4.7:1). That value is the floor, not a starting point to tune downward from.",
+      "Don't use box-shadow to raise an element. The install row's lift is a recorded outlier, not a precedent.",
+      "Don't wrap a region in a background, card, or panel to separate it. Hairline plus rhythm, or the rhythm is wrong.",
+      "Don't put a second max-width inside an already-narrow grid column.",
+      "Don't drive an entrance from JavaScript, and don't use motion for anything whose start state is opacity: 0.",
+      "Don't shrink the mark's frame below 240px, or the terminal hooks break apart.",
+      "Don't caption a flourish. If a conceit needs a legend to land, it is a lecture."
+    ]
+  }
+}

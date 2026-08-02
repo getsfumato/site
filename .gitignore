@@ -9,3 +9,7 @@ next-env.d.ts
 .vercel
 
 .DS_Store
+
+# local-only impeccable state; DESIGN.md and .impeccable/design.json are tracked
+.impeccable/hook.cache.json
+.impeccable/config.local.json

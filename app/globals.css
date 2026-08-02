@@ -38,7 +38,10 @@
   --ivory: #e9e1d1;
   --ivory-dim: #b9b2a0;
   --ivory-mute: #8c8578;
-  --ivory-faint: #6b6558;
+  /* the quietest tier. lifted from #6b6558, which measured 3.5:1 on the ground —
+     under the 4.5:1 floor for the 10-11px type that actually uses it (beat tags,
+     the attribution credit). #827b6a measures 4.7:1 and keeps the warm bias. */
+  --ivory-faint: #827b6a;
 
   --font-pixel: var(--font-geist-pixel-square), ui-monospace, monospace;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -284,7 +287,13 @@ body {
   cursor: pointer; /* click to replay the reveal */
 }
 
-/* Pixel, 12 mono cells at the top end and 4 at the bottom */
+/* Pixel, 12 mono cells at the top end and 4 at the bottom.
+
+   Solid, not a gradient. A clipped gradient across the letterforms was doing the
+   one thing this palette's own doctrine forbids — using gold as paint rather than
+   as light — and background-clip display type is the single most recognisable
+   generated-page tell there is. The glow below does the lifting instead, which is
+   gold behaving as light, and at 8rem the type needs no help being emphatic. */
 .wordmark {
   margin: 0;
   font-family: var(--font-pixel);
@@ -292,10 +301,7 @@ body {
   font-size: clamp(2.75rem, 9vw, 8.25rem);
   line-height: 0.86;
   letter-spacing: 0.02em;
-  background: linear-gradient(172deg, var(--ivory) 8%, var(--gold-soft) 58%, var(--gold-deep) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--ivory);
   /* the pixel forms are small squares; a wide soft shadow makes them read as lit
      rather than printed */
   filter: drop-shadow(0 0 26px rgba(203, 160, 83, 0.22));
@@ -316,11 +322,10 @@ body {
   color: var(--ivory);
 }
 
-/* ---------- mono chrome: eyebrows, tags, keys --------------------------- */
+/* ---------- mono chrome: tags, keys, links ------------------------------ */
 
 /* Every machine-voiced label shares one size, one case and one tracking. That
    repetition is most of what makes the page feel like a single system. */
-.eyebrow,
 .beat__tag,
 .spec__key,
 .links a {
@@ -328,25 +333,6 @@ body {
   font-size: var(--cell);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.eyebrow {
-  margin: var(--s-3) 0 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--ivory-mute);
-}
-
-.eyebrow > span {
-  white-space: nowrap;
-}
-
-/* a hairline instead of a slash: quieter, and it repeats the rules between beats */
-.rule {
-  width: 1.5rem;
-  height: 1px;
-  background: var(--gold-deep);
 }
 
 /* ---------- beats ------------------------------------------------------- */
@@ -515,7 +501,9 @@ body {
   gap: 0.6em;
   padding: 0.85rem 0.5rem 0.85rem 1rem;
   font-family: var(--font-mono);
-  font-size: clamp(0.625rem, 2.5vw, 0.8125rem);
+  /* tops out at the code step rather than its own 0.8125rem: this IS code, the
+     snippets are set at 0.75rem, and one shared size means less to overflow. */
+  font-size: clamp(0.625rem, 2.5vw, 0.75rem);
   color: var(--ivory);
   text-align: left;
   white-space: nowrap;
@@ -563,8 +551,29 @@ body {
   color: var(--gold);
 }
 
-.install__alt {
+/* The pre-release reality, at the weight a reader deserves rather than as a faint
+   aside. Same size as the alt line below it but a tier brighter, and the label is
+   the only <strong> on the page — this is the one thing a visitor could otherwise
+   discover the hard way, several minutes into a build. */
+.install__status {
   margin: var(--s-2) 0 0;
+  max-width: 34rem;
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: var(--ivory-dim);
+}
+
+.install__status strong {
+  font-weight: 400;
+  font-family: var(--font-mono);
+  font-size: var(--cell);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+.install__alt {
+  margin: var(--s-1) 0 0;
   font-size: 0.75rem;
   color: var(--ivory-mute);
 }
@@ -604,7 +613,8 @@ body {
   background: radial-gradient(58% 46% at 50% 46%, rgba(148, 103, 18, 0.16), transparent 72%);
 }
 
-/* base <img> and GL canvas occupy the same box; the canvas takes over once ready */
+/* the base image element and the GL canvas occupy the same box; the canvas takes
+   over once it is ready */
 .specimen__base,
 .specimen__gl {
   position: absolute;
@@ -778,10 +788,12 @@ body {
   border-radius: 2px;
 }
 
+/* 0.875rem rather than its own 0.8125rem: the spec list already owns that step, and
+   one fewer distinct size in the footer is worth more than the 1px it gave up. */
 .foot__note {
   margin: 0;
   max-width: var(--measure);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--ivory-mute);
 }
@@ -828,11 +840,12 @@ body {
     text-align: center;
   }
 
-  .eyebrow {
-    justify-content: center;
+  .lede {
+    margin-inline: auto;
   }
 
-  .lede {
+  .install__status,
+  .install__alt {
     margin-inline: auto;
   }
 
@@ -945,12 +958,15 @@ body {
     opacity: 0.3;
   }
   .lede,
-  .prose {
+  .prose,
+  .install__status {
     color: var(--ivory);
   }
   .foot__note,
   .links a,
-  .install__alt {
+  .install__alt,
+  .beat__tag,
+  .foot__credit {
     color: var(--ivory-dim);
   }
 }
