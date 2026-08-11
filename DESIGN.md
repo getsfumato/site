@@ -39,6 +39,11 @@ typography:
     fontSize: "clamp(0.625rem, 2.5vw, 0.75rem)"
     fontWeight: 400
     lineHeight: 1.6
+  code-micro:
+    fontFamily: "Geist Mono, ui-monospace, SF Mono, Menlo, monospace"
+    fontSize: "0.5625rem"
+    fontWeight: 400
+    lineHeight: 1.6
 rounded:
   none: "0"
   panel: "10px"
@@ -120,9 +125,8 @@ value for a measured one has broken the system even if it looks identical.
 - Depth by emergence — atmosphere, masks and light pools, not shadows.
 - Imagery has no edge: every plate and the portrait dissolve to zero alpha.
 
-## History
-
-Two things were removed rather than refined, and both removals are doctrine now:
+**Removed, and not to be reintroduced.** Two things were cut rather than refined,
+and both removals are doctrine now:
 
 - **The epicycle mark.** The wordmark's S used to be reconstructed from its own
   Fourier series and rendered as an orbiting ASCII field. It was the most
@@ -206,8 +210,13 @@ confined to the one human sentence on the page and kept quiet: weight 300, leadi
 - **Label** (Mono, `0.6875rem` = one cell, `0.16em`, uppercase): the platform line
   under the command, and the only label voice left. One size, one case, one tracking.
 - **Code** (Mono, `0.75rem`): the copy button, at `0.08em` tracking.
-- **Code (fluid)** (Mono, `clamp(0.625rem, 2.5vw, 0.75rem)`): the install command,
-  dropping to `0.5625rem` below `22rem` so the whole command stays visible.
+- **Code (fluid)** (Mono, `clamp(0.625rem, 2.5vw, 0.75rem)`): the install command.
+- **Code (micro)** (Mono, `0.5625rem` = 9px): the install command below `22rem`, and
+  the only step on the ramp that exists for a single breakpoint. It is a deliberate
+  floor, not a stray value: a half-shown install command reads as broken, so on the
+  narrowest phones type size is what gets traded. Nothing else may use it — 9px is
+  under any reasonable reading size and survives here only because the string is a
+  command to copy, not prose to read.
 
 ### Named Rules
 
