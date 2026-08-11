@@ -354,12 +354,21 @@ with `<target>` a Rust triple: `aarch64-apple-darwin`, `x86_64-apple-darwin`,
 `x86_64-unknown-linux-gnu`, `aarch64-unknown-linux-gnu`, and the `-musl`
 variants.
 
-> **Not functional yet.** `getsfumato/cli` has no published releases, so the
-> installer falls through to building from source with `cargo install --git`
-> (the repo is public, so that path works today). Publish a tagged release with
-> assets named as above and the fast path starts working with no change to the
-> script. `sfumato` is also not on crates.io — once it is, simplify
-> `cargo_fallback()` to `cargo install sfumato --locked`.
+Live since `v0.3.0`, which publishes all six triples. The fast path is the normal
+path; `cargo_fallback()` only runs on an unsupported platform or when the version
+lookup fails.
+
+On Linux the script also compares the host's glibc against `GLIBC_FLOOR`, the
+version the `-gnu` artifacts are linked against, and prefers the static musl build
+below it. Without that a host on Debian 11 or Ubuntu 20.04 installed successfully
+and then failed on every run with `GLIBC_2.35 not found` — a failure that points
+nowhere near the installer. Raise `GLIBC_FLOOR` only when the runner image in
+`release.yml` changes.
+
+> `sfumato` is not on crates.io yet, so `cargo_fallback()` still builds with
+> `cargo install --git`. Once it is published, and once
+> `cargo install sfumato --locked --version <v>` has been verified from a clean
+> cache, simplify it.
 
 ## Deploy
 

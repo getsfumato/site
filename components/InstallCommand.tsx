@@ -91,17 +91,19 @@ export default function InstallCommand() {
           </AnimatePresence>
         </motion.button>
       </div>
-      {/* The honest status, not a footnote. There are no tagged releases yet, so the
-          script's fast path falls through to `cargo install --git` — which works today,
-          but takes a Rust toolchain and a few minutes. Saying so here costs nothing with
-          an audience that reads install scripts before running them, and a visitor who
-          discovers it only after piping to a shell has been misled by omission. */}
+      {/* The honest status, not a footnote — the same reason it used to say this
+          compiles from source. Prebuilt binaries exist now, so what a visitor needs
+          to know is which platforms and that rendering wants a browser. An audience
+          that reads install scripts before running them is owed the caveats up
+          front rather than after piping to a shell. */}
       <p className="install__status">
-        <strong>Pre-release.</strong> No tagged builds yet, so this compiles from source and
-        needs a Rust toolchain. macOS and Linux; Apple&nbsp;Silicon, x86_64, aarch64.
+        Prebuilt binary, checksum verified. macOS and Linux; Apple&nbsp;Silicon,
+        x86_64, aarch64. Generating a resource also wants a Chromium-family browser,
+        and <code>marp</code> or <code>ffmpeg</code> depending on what you make —{' '}
+        <code>sfumato renderer doctor</code> says what is missing.
       </p>
       <p className="install__alt">
-        <a href="https://github.com/getsfumato/cli#quick-start">Build it by hand instead</a>
+        <a href="https://github.com/getsfumato/sfumato#quick-start">Build it by hand instead</a>
       </p>
     </section>
   );

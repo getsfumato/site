@@ -74,10 +74,11 @@ Three supporting truths sit beneath it and must not be promoted above it:
 - Installation is `curl … | sh` against `public/install.sh`: POSIX `sh`, non-interactive,
   detects OS/arch including musl, verifies SHA-256 when published, installs to
   `~/.local/bin`. Overrides: `SFUMATO_VERSION`, `SFUMATO_BIN_DIR`, `SFUMATO_NO_MODIFY_PATH`.
-- **Constraint — pre-release.** `getsfumato/cli` has no published releases and
-  `sfumato` is not on crates.io, so the installer falls through to
-  `cargo install --git`. Design must not imply a one-line binary install works today,
-  and must not promise release timing.
+- **A one-line binary install works as of `v0.3.0`.** Six triples are published
+  from `getsfumato/sfumato`, checksum-verified, and the installer prefers the static
+  musl build on a host whose glibc is older than the `-gnu` artifacts require.
+  `sfumato` is not on crates.io yet, so `cargo_fallback()` still builds from git;
+  design must not promise release timing for that.
 - Written in Rust; hosted on Vercel with zero config. `install.sh` is served as
   `text/plain` so it can be read before being piped to a shell — that readability is
   a deliberate product commitment, not an implementation detail.
@@ -88,7 +89,7 @@ Three supporting truths sit beneath it and must not be promoted above it:
 ## Brand Commitments
 
 - Name: **sfumato**, lowercase. Domain `sfumato.sh`. Source at
-  `github.com/getsfumato/cli`.
+  `github.com/getsfumato/sfumato`.
 - The name is Leonardo's technique of blending tone into tone with no line between
   them, and the site's identity is built on that: three public-domain Leonardo
   paintings (*Virgin of the Rocks*, *Salvator Mundi*, *The Baptism of Christ*) as
@@ -123,8 +124,11 @@ Three supporting truths sit beneath it and must not be promoted above it:
    real. Plausible-looking invented metrics are worse than silence.
 4. **Internals live in the docs.** The page carries what a reader can act on; parser
    names, viewport lists and patch semantics belong in `sfumato-cli/docs`.
-5. **Honest about being early.** Pre-release status is stated where it matters rather
-   than papered over with the visual language of an established product.
+5. **Honest about being early.** Early status is stated where it matters rather
+   than papered over with the visual language of an established product. What that
+   sentence says changes as the truth does: it used to disclose that installing
+   meant compiling from source, and now discloses which external tools rendering
+   wants.
 
 ## Accessibility & Inclusion
 

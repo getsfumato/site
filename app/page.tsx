@@ -142,9 +142,9 @@ export default function Home() {
         <Reveal>
           <footer className="foot">
             <nav className="links" aria-label="Project links">
-              <a href="https://github.com/getsfumato/cli">source</a>
-              <a href="https://github.com/getsfumato/cli/tree/master/docs/guide">docs</a>
-              <a href="https://github.com/getsfumato/cli/releases">releases</a>
+              <a href="https://github.com/getsfumato/sfumato">source</a>
+              <a href="https://github.com/getsfumato/sfumato/tree/master/docs/guide">docs</a>
+              <a href="https://github.com/getsfumato/sfumato/releases">releases</a>
             </nav>
             <p className="foot__note">
               <em>Sfumato</em>

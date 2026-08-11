@@ -10,7 +10,7 @@
 
 set -eu
 
-REPO="getsfumato/cli"
+REPO="getsfumato/sfumato"
 BIN="sfumato"
 TMP=""
 
