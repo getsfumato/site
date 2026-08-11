@@ -35,6 +35,22 @@ need() { command -v "$1" >/dev/null 2>&1; }
 
 # ---- platform -------------------------------------------------------------
 
+# The glibc the `-gnu` release artifacts are linked against, from the runner image
+# release.yml pins. Raise it only alongside that image.
+GLIBC_FLOOR=2.35
+
+host_glibc() {
+  # "ldd (Ubuntu GLIBC 2.35-0ubuntu3.1) 2.35" -> "2.35"
+  ldd --version 2>/dev/null | head -n 1 | tr ' ' '\n' | tail -n 1
+}
+
+# older_than <version> <floor>
+older_than() {
+  # sort -V puts the lower version first, so $1 is older exactly when it sorts
+  # first and the two differ.
+  [ "$1" != "$2" ] && [ "$(printf '%s\n%s\n' "$1" "$2" | sort -V | head -n 1)" = "$1" ]
+}
+
 detect_target() {
   os=$(uname -s)
   arch=$(uname -m)
@@ -50,6 +66,12 @@ detect_target() {
     Linux)
       # a musl host needs the statically linked build
       if need ldd && ldd --version 2>&1 | grep -qi musl; then
+        echo "${arch}-unknown-linux-musl"
+      elif [ -n "$(host_glibc)" ] && older_than "$(host_glibc)" "$GLIBC_FLOOR"; then
+        # The -gnu builds are linked on Ubuntu 22.04, so a host below its glibc
+        # cannot run them: the install would succeed and every later invocation
+        # would fail with "GLIBC_2.xx not found". The musl build is fully static
+        # and runs anywhere, so prefer it over a confident failure.
         echo "${arch}-unknown-linux-musl"
       else
         echo "${arch}-unknown-linux-gnu"
@@ -194,7 +216,11 @@ if [ "$on_path" = 1 ]; then
 elif [ "${SFUMATO_NO_MODIFY_PATH:-0}" != 1 ]; then
   say "  $BIN_DIR is not on your PATH. Add it:"
   say ''
-  case "${SHELL##*/}" in
+  # Defaulted before the expansion: `set -u` makes a bare ${SHELL##*/} abort when
+  # SHELL is unset, which is common in containers — so the script died on its last
+  # and most helpful line, after having installed successfully.
+  shell_name="${SHELL:-}"
+  case "${shell_name##*/}" in
     zsh)  say "    echo 'export PATH=\"$BIN_DIR:\$PATH\"' >> ~/.zshrc && exec zsh" ;;
     fish) say "    fish_add_path $BIN_DIR" ;;
     *)    say "    echo 'export PATH=\"$BIN_DIR:\$PATH\"' >> ~/.bashrc && exec bash" ;;
