@@ -91,20 +91,12 @@ export default function InstallCommand() {
           </AnimatePresence>
         </motion.button>
       </div>
-      {/* The honest status, not a footnote — the same reason it used to say this
-          compiles from source. Prebuilt binaries exist now, so what a visitor needs
-          to know is which platforms and that rendering wants a browser. An audience
-          that reads install scripts before running them is owed the caveats up
-          front rather than after piping to a shell. */}
-      <p className="install__status">
-        Prebuilt binary, checksum verified. macOS and Linux; Apple&nbsp;Silicon,
-        x86_64, aarch64. Generating a resource also wants a Chromium-family browser,
-        and <code>marp</code> or <code>ffmpeg</code> depending on what you make —{' '}
-        <code>sfumato renderer doctor</code> says what is missing.
-      </p>
-      <p className="install__alt">
-        <a href="https://github.com/getsfumato/sfumato#quick-start">Build it by hand instead</a>
-      </p>
+      {/* The one caveat that survives the cut. Everything else the old status
+          paragraph carried — checksums, architectures, which renderer wants which
+          binary — is what `sfumato renderer doctor` and the docs are for; on a page
+          whose whole argument is one command, a four-line footnote under it was the
+          largest block of text on screen. */}
+      <p className="install__status">macOS &amp; Linux</p>
     </section>
   );
 }

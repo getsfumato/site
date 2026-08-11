@@ -98,12 +98,16 @@ const FRAGMENT = /* glsl */ `
     // Virgin of the Rocks — the cave mouth, entering from the left
     acc += plate(uVirgin, frag, vec2(0.13 * aspect, 0.42), vec2(0.36, 0.54),
                  uAspect.x, 1.08, 0.030, t);
-    // Salvator Mundi — the blessing hand and the slate robe, from the right
-    acc += plate(uSalvator, frag, vec2(0.88 * aspect, 0.46), vec2(0.34, 0.48),
-                 uAspect.y, 1.10, 0.026, t + 40.0);
-    // The Baptism of Christ — the gold-richest of the three; a warm floor glow
-    acc += plate(uBaptism, frag, vec2(0.52 * aspect, 0.98), vec2(0.64, 0.46),
-                 uAspect.z, 0.92, 0.022, t + 80.0);
+    // Salvator Mundi — the blessing hand and the slate robe, from the right.
+    // Held well down from the other two: he is the centre of the page now, and a
+    // second legible face at the right edge read as the same figure twice.
+    acc += plate(uSalvator, frag, vec2(0.90 * aspect, 0.46), vec2(0.34, 0.48),
+                 uAspect.y, 0.46, 0.026, t + 40.0);
+    // The Baptism of Christ — the gold-richest of the three; a warm floor glow.
+    // Also pulled back: at full strength the glow reached the icon row and made
+    // the bottom of the page brighter than the wordmark.
+    acc += plate(uBaptism, frag, vec2(0.52 * aspect, 1.06), vec2(0.64, 0.44),
+                 uAspect.z, 0.58, 0.022, t + 80.0);
 
     // screen blend: the paintings' own blacks vanish, only the lit parts add
     col = 1.0 - (1.0 - col) * (1.0 - clamp(acc, 0.0, 1.0));
@@ -135,24 +139,6 @@ function texAspect(tex: THREE.Texture): number {
 export default function PaintingField() {
   const hostRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
-  const [dim, setDim] = useState(false);
-
-  // The specimen act puts Salvator Mundi centre stage; leaving him in the
-  // background at full strength at the same time reads as a duplicate, so the
-  // ambient field steps back while that section is in view.
-  useEffect(() => {
-    const target = document.getElementById('measure');
-    if (!target) return;
-    // A ratio threshold cannot fire here: the section is taller than the
-    // viewport, so 35% of it is never visible at once. Shrink the root to a
-    // middle band instead and dim when the section crosses it.
-    const io = new IntersectionObserver(
-      ([entry]) => setDim(Boolean(entry?.isIntersecting)),
-      { threshold: 0, rootMargin: '-35% 0px -35% 0px' },
-    );
-    io.observe(target);
-    return () => io.disconnect();
-  }, []);
 
   useEffect(() => {
     const host = hostRef.current;
@@ -308,7 +294,7 @@ export default function PaintingField() {
   }, []);
 
   return (
-    <div className="field" aria-hidden="true" data-dim={dim}>
+    <div className="field" aria-hidden="true">
       <div className="field__css" data-hidden={ready}>
         <div className="plate plate--virgin" />
         <div className="plate plate--baptism" />

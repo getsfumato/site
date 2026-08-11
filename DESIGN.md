@@ -1,20 +1,16 @@
 ---
 name: sfumato
-description: A conservation lab reading a Leonardo — warm varnished dark, sampled ochre-gold, and mono instrumentation over dissolved paintings.
+description: One screen — a Leonardo surfacing out of warm varnished dark, a pixel wordmark, one command, three icons.
 colors:
   ink-000: "#080706"
   ink-050: "#0b0908"
   ink-100: "#12100d"
   gold: "#cba053"
-  gold-soft: "#ba9c6b"
   gold-dim: "#a28757"
   gold-deep: "#946712"
-  slate: "#7d818e"
   ivory: "#e9e1d1"
   ivory-dim: "#b9b2a0"
   ivory-mute: "#8c8578"
-  ivory-faint: "#827b6a"
-  hair: "rgba(233, 225, 209, 0.1)"
 typography:
   display:
     fontFamily: "Geist Pixel Square, ui-monospace, monospace"
@@ -22,38 +18,11 @@ typography:
     fontWeight: 400
     lineHeight: 0.86
     letterSpacing: "0.02em"
-  numeral:
-    fontFamily: "Geist Pixel Square, ui-monospace, monospace"
-    fontSize: "1.375rem"
-    fontWeight: 400
-    lineHeight: 1
-  title:
-    fontFamily: "Geist Sans, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.25rem, 3.4vw, 1.5rem)"
-    fontWeight: 400
-    lineHeight: 1.28
-    letterSpacing: "-0.01em"
   lede:
     fontFamily: "Geist Sans, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.0625rem, 2.6vw, 1.1875rem)"
-    fontWeight: 300
-    lineHeight: 1.62
-  body:
-    fontFamily: "Geist Sans, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 300
-    lineHeight: 1.68
-  small:
-    fontFamily: "Geist Sans, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.875rem"
+    fontSize: "clamp(0.9375rem, 2.6vw, 1.0625rem)"
     fontWeight: 300
     lineHeight: 1.6
-  micro:
-    fontFamily: "Geist Mono, ui-monospace, SF Mono, Menlo, monospace"
-    fontSize: "0.625rem"
-    fontWeight: 400
-    lineHeight: 1.7
-    letterSpacing: "0.02em"
   label:
     fontFamily: "Geist Mono, ui-monospace, SF Mono, Menlo, monospace"
     fontSize: "0.6875rem"
@@ -65,16 +34,13 @@ typography:
     fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.7
-  readout:
+  code-fluid:
     fontFamily: "Geist Mono, ui-monospace, SF Mono, Menlo, monospace"
-    fontSize: "0.5625rem"
+    fontSize: "clamp(0.625rem, 2.5vw, 0.75rem)"
     fontWeight: 400
     lineHeight: 1.6
-    letterSpacing: "0.04em"
-    fontFeature: "tabular-nums"
 rounded:
   none: "0"
-  hairline: "2px"
   panel: "10px"
 spacing:
   cell: "0.6875rem"
@@ -83,12 +49,15 @@ spacing:
   s-3: "1.25rem"
   s-4: "2rem"
   s-5: "3.25rem"
-  s-6: "5rem"
-  s-7: "7rem"
 components:
+  stage:
+    backgroundColor: "transparent"
+    textColor: "{colors.ivory}"
+    rounded: "{rounded.none}"
+    padding: "3.25rem clamp(1.25rem, 5vw, 2rem)"
   install-row:
     textColor: "{colors.ivory}"
-    typography: "{typography.code}"
+    typography: "{typography.code-fluid}"
     rounded: "{rounded.panel}"
     width: "100%"
   copy-button:
@@ -100,145 +69,117 @@ components:
   copy-button-hover:
     backgroundColor: "rgba(203, 160, 83, 0.08)"
     textColor: "{colors.gold}"
-  snippet:
-    backgroundColor: "rgba(18, 16, 13, 0.5)"
-    textColor: "{colors.ivory-dim}"
-    typography: "{typography.code}"
-    rounded: "{rounded.none}"
-    padding: "0.75rem 1.25rem"
-  beat:
-    backgroundColor: "transparent"
-    textColor: "{colors.ivory-dim}"
-    rounded: "{rounded.none}"
-    padding: "3.25rem 0"
-  beat-numeral:
-    textColor: "{colors.gold}"
-    typography: "{typography.numeral}"
-  beat-tag:
-    textColor: "{colors.ivory-faint}"
-    typography: "{typography.label}"
-  spec-key:
-    textColor: "{colors.gold-dim}"
-    typography: "{typography.label}"
-  nav-link:
-    backgroundColor: "transparent"
+  platform-line:
     textColor: "{colors.ivory-mute}"
     typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: "0.2rem 0"
-  nav-link-hover:
-    textColor: "{colors.ivory}"
-  reticle:
+  icon-link:
     backgroundColor: "transparent"
-    textColor: "{colors.ivory-dim}"
-    typography: "{typography.readout}"
-    rounded: "{rounded.none}"
+    textColor: "{colors.ivory-mute}"
+    rounded: "{rounded.panel}"
+    width: "44px"
+    height: "44px"
+  icon-link-hover:
+    backgroundColor: "rgba(203, 160, 83, 0.08)"
+    textColor: "{colors.gold}"
 ---
 
 # Design System: sfumato
 
 ## Overview
 
-**Creative North Star: "The Measured Leonardo"**
+**Creative North Star: "One Screen, One Action"**
 
-A conservation lab at night. A five-century-old painting is the subject; the page
-is the instrument reading it. That gives every element one of exactly two jobs:
-it is either **the painting** — warm, varnished, tonally continuous, emerging from
-near-black rather than sitting on it — or it is **the instrument** — mono, uppercase,
-widely tracked, hairline-thin, tabular, and utterly unhurried. The tension between
-those two registers *is* the identity, and it is the same tension the product's
-name describes: a machine looking very closely at gradation it cannot draw a line
-through.
+A five-century-old painting surfaces out of the dark, the name sits into its base,
+and under it there is exactly one thing to do. The page is a single centred column
+that fits in a viewport: portrait, wordmark, one line of language, the install
+command, three icons. Nothing scrolls and nothing enumerates features — a visitor
+who has read the line either runs the command or follows a link, and everything
+that was neither of those has been removed.
+
+The register is still warm, varnished and tonally continuous: things emerge from
+near-black rather than sitting on it. The one machine voice left is mono — the
+command and the platform line — and it is deliberately quiet, because the page no
+longer argues that it is an instrument. Salvator Mundi carries the identity: a
+cutout dissolved into the ground it stands in, so there is no line between figure
+and dark, which is what the product's name means.
 
 Nothing here is decided by taste where it could be decided by measurement. The
 palette is sampled from the three source paintings by k-means in CIELab, not
-eyeballed from them — which is why the lapis reads as desaturated slate rather than
-the ultramarine memory supplies, and why ochre-gold rather than any brand hue is
-the accent. The wordmark is not drawn, it is *reconstructed*: a letterform run
-through a DFT and rebuilt from its own harmonics, still orbiting. The specimen's
-readouts are genuinely measured off the pixels underneath them. That provenance is
-load-bearing. A future contributor who substitutes a plausible-looking value for a
-measured one has broken the system even if it looks identical.
-
-Density is low and deliberate; the page breathes in one continuous descent with no
-panels, no cards, and no sections that announce themselves. Depth is atmospheric,
-never physical: things surface out of darkness. There is exactly one flat colour
-of light — a warm gold — and it is rationed hard enough that its every appearance
-reads as emphasis.
+eyeballed from them — which is why ochre-gold rather than any brand hue is the
+accent. The vitruvian glyph in the link row was drawn against the original at 20,
+28, 64 and 140px and reduced to the parts that survive at icon size. That
+provenance is load-bearing: a contributor who substitutes a plausible-looking
+value for a measured one has broken the system even if it looks identical.
 
 **Key Characteristics:**
 
+- One screen, one action; no sections, no scroll, no feature list.
 - Warm near-black ground (`#0b0908`), never neutral grey and never cool.
 - One accent hue, ochre-gold, sampled from the Baptism's halos.
-- Three type faces, one job each, zero overlap.
-- Hairlines and rules instead of borders, cards, and boxes.
+- Three type faces, one job each, and only one sentence of language.
 - Depth by emergence — atmosphere, masks and light pools, not shadows.
-- Every number on screen is measured, or it is not on screen.
+- Imagery has no edge: every plate and the portrait dissolve to zero alpha.
+
+## History
+
+Two things were removed rather than refined, and both removals are doctrine now:
+
+- **The epicycle mark.** The wordmark's S used to be reconstructed from its own
+  Fourier series and rendered as an orbiting ASCII field. It was the most
+  interesting object on the page and it was also the reason the name arrived second.
+  The pixel wordmark carries the identity alone now.
+- **The three beats.** A rail of Pixel numerals, prose columns, code snippets and an
+  instrumented Salvator "specimen" with measured μ / ∇ readouts. All of it was true
+  and none of it was necessary to install a CLI. The specimen's one surviving idea —
+  that two Leonardos at full strength read as a duplicate — lives on as the reason
+  the background's Salvator plate is held down (see The Ground).
+
+If a future pass wants a feature list, an inspection plate, or a second act, it
+belongs in the docs site, not here.
 
 ## Colors
 
-Warm earth read through varnish: three near-blacks, one gold family, one ivory
-family for language, and a single desaturated slate that appears only inside the
-mark.
+Warm earth read through varnish: three near-blacks, one gold family, three ivories
+for language and chrome. Nine values, all of them in use — the palette holds no
+token that nothing references.
 
 ### Primary
 
 - **Halo Gold** (`#cba053`): the hero accent, sampled from the Baptism's halos where
-  it accounts for 24% of pixels. Reserved for the things the eye must find — the
-  beat numerals, the `$` prompt, the shell under a hovered link, the reticle corner
-  ticks, focus rings. It is never a fill and never a background.
-- **Lit Gold** (`#ba9c6b`): the softer, lifted mid-tone of the same family; appears
-  in the wordmark's gradient where the letterform catches light.
-- **Patina Gold** (`#a28757`): the quiet, non-shouting gold for text that is
-  interactive but at rest — the copy button's idle label, the spec keys, the
-  specimen's block readouts, inline links.
-- **Deep Ochre** (`#946712`): gold pushed into shadow. Used for structural hairlines
-  (the eyebrow rule), the selection background, and the warm pool of light beneath
-  the specimen. Too dark for text on the ground; treat it as a *material*, not a
-  text colour.
-
-### Secondary
-
-- **Varnished Lapis** (`#7d818e`): Leonardo's ultramarine as it actually reads under
-  five centuries of varnish — desaturated slate. It currently exists only inside
-  `EpicycleMark`'s colour mixing, not as a CSS custom property. It is the honest
-  secondary and the *only* sanctioned cool value in the system; if a second accent
-  is ever needed, it is this one, promoted to a token — not a new hue.
+  it accounts for 24% of pixels. Reserved for the things the eye must find — the `$`
+  prompt, a hovered icon, focus rings, the wordmark's glow. Never a fill, never a
+  background.
+- **Patina Gold** (`#a28757`): the quiet gold for something interactive but at rest —
+  the copy button's idle label.
+- **Deep Ochre** (`#946712`): gold pushed into shadow. The selection background.
+  Too dark for text on the ground; treat it as a *material*, not a text colour.
 
 ### Neutral
 
-- **Cave Black** (`#080706`): the deepest ground. The vignette's outer edge and the
-  radial field's far falloff.
+- **Cave Black** (`#080706`): the deepest ground — the radial field's far falloff and
+  the vignette's outer edge.
 - **Ground Black** (`#0b0908`): the page ground and the browser theme colour. Warm,
   not neutral — its red channel is deliberately above its blue.
-- **Umber Black** (`#12100d`): the lifted centre of the field's radial gradient, and
-  the tint under code snippets at 50% alpha.
-- **Lit Ivory** (`#e9e1d1`): sampled from lit flesh and drapery. All primary text,
-  headings, and emphasis.
-- **Veiled Ivory** (`#b9b2a0`): body prose and the lede. The default reading colour;
-  primary ivory is reserved for emphasis *within* it.
-- **Muted Ivory** (`#8c8578`): mono chrome at rest — eyebrows, footer notes, nav
-  links, secondary lines.
-- **Faint Ivory** (`#827b6a`): the quietest tier — beat tags and the attribution
-  credit. As close to the ground as the 4.5:1 contrast floor permits, and no closer;
-  it measures 4.7:1 and sets the hard lower bound for any text colour in the system.
-- **Hairline** (`rgba(233, 225, 209, 0.1)`): every structural division on the page.
-  Ivory at 10%, never a solid grey.
+- **Umber Black** (`#12100d`): the lifted centre of the field's radial gradient.
+- **Lit Ivory** (`#e9e1d1`): the wordmark and the command. The brightest thing on the
+  page must be one of those two.
+- **Veiled Ivory** (`#b9b2a0`): the single line of language under the name.
+- **Muted Ivory** (`#8c8578`): mono chrome at rest — the platform line and the icons.
 
 ### Named Rules
 
 **The Rationed Light Rule.** Gold is light, not paint. It appears as thin strokes,
-small marks, single glyphs, and gradient passages — never as a filled button, badge,
-panel, or block. If a gold region is large enough to read as a shape, it is wrong.
+small marks and single glyphs — never as a filled button, badge, panel or block. If
+a gold region is large enough to read as a shape, it is wrong.
 
-**The Warm Ground Rule.** Every dark value in this system has more red than blue.
-There is no neutral grey and no cool black anywhere in the palette. A `#0a0a0a` or
-a `slate-950` is an immediate identity break, however subtle it looks alone.
+**The Warm Ground Rule.** Every dark value has more red than blue. There is no
+neutral grey and no cool black anywhere in the palette. A `#0a0a0a` or a
+`slate-950` is an immediate identity break, however subtle it looks alone.
 
-**The Three-Tier Text Rule.** Language descends through exactly three ivories —
-Lit for emphasis, Veiled for prose, Muted for chrome — and a fourth (Faint) only for
-attribution and tags. Reaching for an opacity on ivory instead of the next tier down
-fragments the ramp.
+**The Three-Tier Text Rule.** Language descends through exactly three ivories — Lit
+for the name and the command, Veiled for the sentence, Muted for chrome. Reaching
+for an opacity on ivory instead of the next tier down fragments the ramp. There is
+no fourth tier: the page no longer has anything quiet enough to need one.
 
 ## Typography
 
@@ -247,10 +188,9 @@ fragments the ramp.
 **Label/Mono Font:** Geist Mono (with `ui-monospace`, `SF Mono`, Menlo, monospace)
 
 **Character:** Pixel and Mono *rhyme* — both are grid-derived, so they read as one
-mechanical voice speaking at two volumes. Sans is the humanist outlier, which is
-precisely why it is confined to language and kept quiet: light weight (300),
-generous leading (1.6–1.68), low contrast. The grid carries the identity; the
-humanist face carries the meaning.
+mechanical voice at two volumes. Sans is the humanist outlier, which is why it is
+confined to the one human sentence on the page and kept quiet: weight 300, leading
+1.6, low contrast.
 
 ### Hierarchy
 
@@ -259,182 +199,127 @@ humanist face carries the meaning.
   (`0 0 26px rgba(203,160,83,0.22)`) so the pixel squares read as *lit* rather than
   printed. It previously carried a clipped ivory → gold gradient; that used gold as
   paint rather than as light, against this system's own Rationed Light Rule, and
-  gradient display type is the most recognisable generated-page tell there is. At
-  8rem the type needs no help being emphatic.
-- **Numeral** (Pixel, 400, exactly `calc(var(--cell) * 2)` = 22px, line-height 1):
-  the beat enumeration, in Halo Gold. Its optical top is nudged into the heading's
-  cap height with `padding-top: 0.2rem`.
-- **Title** (Sans, 400, `clamp(1.25rem, 3.4vw, 1.5rem)`, 1.28, `-0.01em`,
-  `text-wrap: balance`): beat headings. Small on purpose — the artefact beside it,
-  not the heading, carries the visual weight.
-- **Lede** (Sans, 300, `clamp(1.0625rem, 2.6vw, 1.1875rem)`, 1.62, max `44ch`): the
-  single opening paragraph. `<em>` inside it is *not italic* — it becomes weight 400
-  in Lit Ivory.
-- **Body** (Sans, 300, `0.9375rem`, 1.68, `text-wrap: pretty`): beat prose. Carries
-  **no** `max-width` of its own; the grid column *is* the measure. `<em>` inside
-  prose switches to Mono at `0.9em`, so technical terms borrow the machine voice
-  instead of leaning.
-- **Small** (Sans, 300, `0.875rem`, 1.6): the spec list's values and the footer note.
-  The one step below body, shared by both so the footer doesn't invent its own size.
-- **Micro** (Mono, `0.625rem`, `0.02em`): the attribution credit, and the lower endpoint
-  of the install command's fluid size on the narrowest phones.
-- **Label** (Mono, `0.6875rem` = one cell, `0.16em`, uppercase): every machine-voiced
-  label on the page — eyebrows, beat tags, spec keys, nav links. One size, one case,
-  one tracking, no exceptions.
-- **Code** (Mono, `0.75rem`, 1.7): snippets and the install command.
-- **Readout** (Mono, `0.5625rem`, `0.04em`, `tabular-nums`): the specimen's numeric
-  labels, with a `0 1px 4px rgba(8,7,6,0.9)` text-shadow so 9px type survives over
-  the figure.
+  gradient display type is the most recognisable generated-page tell there is.
+- **Lede** (Sans, 300, `clamp(0.9375rem, 2.6vw, 1.0625rem)`, 1.6, max `34ch`,
+  `text-wrap: balance`): the only sentence. Two lines at desktop width, which is the
+  budget — a third line means the sentence is doing a feature list's job.
+- **Label** (Mono, `0.6875rem` = one cell, `0.16em`, uppercase): the platform line
+  under the command, and the only label voice left. One size, one case, one tracking.
+- **Code** (Mono, `0.75rem`): the copy button, at `0.08em` tracking.
+- **Code (fluid)** (Mono, `clamp(0.625rem, 2.5vw, 0.75rem)`): the install command,
+  dropping to `0.5625rem` below `22rem` so the whole command stays visible.
 
 ### Named Rules
 
-**The One Job Rule.** Pixel is identity and enumeration. Mono is machine surfaces.
-Sans is human language. No face ever takes another's job. Sans never becomes chrome;
-Mono never sets prose; Pixel never appears outside the wordmark and the numerals.
+**The One Job Rule.** Pixel is identity. Mono is machine surfaces. Sans is the one
+human sentence. No face ever takes another's job — Sans never becomes chrome, Mono
+never sets prose, Pixel never appears outside the wordmark.
 
-**The Cell Rule.** Every Pixel size is an exact multiple of the 11px mono cell — 2
-cells for the numerals, 4–12 for the wordmark. The pixel grid and the mono grid never
-drift out of step, which is why they read as one system rather than two fonts.
+**The Cell Rule.** Every Pixel size is an exact multiple of the 11px mono cell. The
+pixel grid and the mono grid never drift out of step, which is why they read as one
+system rather than two fonts.
 
-**The Recurrence Rule.** Pixel must appear at least three times on any surface that
-uses it at all. Used once it reads as a lone exotic; the repetition down the page is
-what converts it from decoration into structure.
+**The Pixel Echo Rule.** Pixel-grid forms appear three times and always as identity:
+the wordmark, the favicon's S, and the same S as the docs icon in the link row.
+Used once, a pixel form reads as a lone exotic; those three are what make it
+structural. Do not add a fourth occurrence for decoration, and do not let the three
+drift apart — they are the same letter drawn on the same grid.
 
-**The Single Label Voice Rule.** Every mono label shares one size, one case, and
-`0.16em` tracking. That repetition is most of what makes unrelated regions feel like
-one page. A label at a different size is a new voice, and there is no budget for one.
+**The Single Label Voice Rule.** Any mono label shares one size, one case and
+`0.16em` tracking. A label at a different size is a new voice, and there is no
+budget for one.
 
 ## Layout
 
-**One grid, full width.** A single container (`.wrap`, `max-width: 86rem`,
-`padding-inline: clamp(1.25rem, 4vw, 3rem)`) carries hero, beats, and footer. There
-are no nested containers and no per-section centring — that is what stops the page
-reading as unrelated panels.
+**One centred column, one viewport.** `.stage` is a flex column — `align-items` and
+`justify-content: center`, `min-height: 100svh`, `gap: --s-3`, padding
+`--s-5 clamp(1.25rem, 5vw, 2rem)`, `text-align: center`. There is no container, no
+grid, no header and no footer.
 
-**The width is filled with artefacts, not longer lines.** Every beat is a three
-column grid — `4.5rem | minmax(0, 24rem) | minmax(0, 1fr)` — where the rail holds
-the numeral and tag, the narrow middle column *is* the measure, and the wide third
-column carries something to look at. Two earlier attempts failed in opposite
-directions: full-viewport "acts" that each centred against arbitrary emptiness so
-nothing aligned, and a `46rem` column that read as a phone layout on a 1400px screen.
+**`min-height`, never `height`.** At around 380px tall in landscape the column is
+taller than the viewport; a fixed height clips the command off the bottom with no
+way to reach it.
 
-**The rail is the spine.** Pixel numerals line up down the left edge, every beat hangs
-off that same axis, and a single hairline (`border-top: 1px solid var(--hair)`)
-separates them. No beat has a background, a card, or a container of its own.
+**The group and the acts.** Portrait, wordmark and sentence read as one unit at the
+base gap; the command and the icon row each take an extra `--s-2` (`.stage__act`)
+so the action separates from the identity without a rule between them.
 
-**One rhythm.** All vertical space comes from the `--s-1` … `--s-7` scale
-(0.5 / 0.75 / 1.25 / 2 / 3.25 / 5 / 7rem). Ad-hoc margins are not permitted.
+**The name sits into the portrait.** The portrait carries `margin-bottom: -1.25rem`
+so the wordmark overlaps the dissolved base of the bust rather than starting after
+a gap. Figure and type occupy one optical block.
 
-**Collapse ladder** — three stages, verified at 320 / 390 / 560 / 760 / 1100 / 1409:
+**Collapse ladder** — the column needs no breakpoints of its own; only two
+components and the plates respond:
 
 | Below | What changes |
 | --- | --- |
-| `68rem` | the artefact drops beneath the copy; the rail stays |
-| `52rem` | the hero stacks and centres (mark above name) |
-| `44rem` | the rail becomes a header row above the copy |
-| `30rem` | container padding tightens; the install row stacks; plates re-size on `vw` |
-| `22rem` | install command trades type size for showing the whole command |
-
-The hero follows the same logic as the beats: the mark sits *beside* the name, not
-above it, because stacked and centred it left the upper half of a wide screen empty.
+| `30rem` | the install row stacks (button border moves left → top); plates re-size on `vw` |
+| `22rem` | the install command trades type size for showing the whole command |
 
 ### Named Rules
 
-**The One Measure Rule.** The reading measure is enforced by the grid column, never
-by a `max-width` on the paragraph. A second constraint inside an already-narrow column
-is what left a third of every beat empty in an earlier pass.
+**The One Screen Rule.** Everything on this page fits one viewport at 1280×720 and
+at 390×844. Anything that would introduce a scroll belongs on `docs.sfumato.sh`.
 
-**The No Panels Rule.** Regions are separated by a hairline and vertical rhythm, never
-by a surface. If a section needs a background to be legible as a section, the rhythm
-is wrong.
+**The No Panels Rule.** Nothing is separated by a surface. There is no card, no
+section background and no divider rule on this page — the centring and the gaps do
+all of it.
 
 ## Elevation & Depth
 
-**Depth is emergence, not lift.** This system is flat in the UI sense and deep in the
-atmospheric sense. Nothing casts a shadow to sit above the page; things instead
-*surface out of* the dark. Four mechanisms carry all of it:
+**Depth is emergence, not lift.** Nothing casts a shadow to sit above the page;
+things *surface out of* the dark. Four mechanisms carry all of it:
 
 1. **The radial ground** — `radial-gradient(120% 90% at 50% 30%, ink-100, ink-000 78%)`
    lifts the centre of the viewport a few L\* above its edges.
 2. **Screen-blended plates** — the three paintings composite with `mix-blend-mode:
-   screen` (`1 - (1-a)(1-b)`) so each one's own varnished near-black drops out and only
-   the lit passages appear. No plate ever has a visible rectangle.
-3. **Radial masks** — every plate is masked with `radial-gradient(closest-side ellipse
-   …, #000 4–8%, transparent 66–72%)`, so it has no edge anywhere.
-4. **Pools of light** — a warm `rgba(148,103,18,0.16)` radial under the specimen, and
-   the wordmark's `26px` gold drop-shadow. Light, not shade.
+   screen` (`1 - (1-a)(1-b)`) so each one's own varnished near-black drops out and
+   only the lit passages appear. No plate ever has a visible rectangle.
+3. **Radial masks** — every plate is masked with `radial-gradient(closest-side
+   ellipse …, #000 4–8%, transparent 66–72%)`, so it has no edge anywhere.
+4. **Pools of light** — the wordmark's `26px` gold drop-shadow. Light, not shade.
 
 ### Shadow Vocabulary
 
 - **Panel lift** (`0 1px 0 rgba(233,225,209,0.05) inset, 0 18px 44px -22px
   rgba(0,0,0,0.9)`): the install row only. **Recorded as an outlier, not doctrine** —
-  it is a UI reflex that sits slightly outside this world, and it is the one candidate
-  for reconsideration in a future refinement pass. Do not propagate it to a second
+  a UI reflex that sits slightly outside this world. Do not propagate it to a second
   element on the grounds that it exists here.
-- **Readout legibility** (`text-shadow: 0 1px 4px rgba(8,7,6,0.9)`): applied to 9px
-  mono over the specimen figure. Functional, not decorative.
 
 ### Named Rules
 
-**The Emergence Rule.** Depth is produced by masks, screen blending, gradients and
-light pools — never by `box-shadow`. If a new element needs to feel raised, give it
-light or give it space; do not give it a shadow.
+**The Emergence Rule.** Depth comes from masks, screen blending, gradients and light
+pools — never from `box-shadow`. If a new element needs to feel raised, give it light
+or give it space.
 
-**The No Edges Rule.** Imagery in this system has no boundary. Every plate is masked
-to transparency and the specimen's alpha is faded per-edge (20% at the foot where the
-crop cuts through solid chest, 10% at the flanks, near zero at the crown) precisely
-because alpha alone cannot remove a *crop*. A rectangular image edge anywhere is a
-defect.
+**The No Edges Rule.** Imagery in this system has no boundary, and alpha alone cannot
+remove a *crop*. The portrait's fade must reach **zero at the very last row**:
+`linear-gradient(180deg, #000 0%, #000 44%, transparent 100%)`. An earlier version
+stopped at `94%` and left the bottom 6% of the crop visible as a straight edge across
+the robe — the one thing this image must not have. A rectangular image edge anywhere
+is a defect.
 
 ## Shapes
 
-**Square by default.** The form language is orthogonal and unrounded: `0` radius on
-snippets, spec rows, beats, buttons, and rules. Two exceptions, both deliberate — the
-install row's `10px` panel radius, and `2px` on focus-ring targets so an outline
-doesn't corner-clip awkwardly.
+**Square by default**, with one radius: the `10px` panel, shared by the install row
+and the icon-link hit areas so the two objects under the name read as one pair.
+Everything else — the copy button, the command, focus rings — is `0`.
 
-Structure is drawn with **lines, not boxes**. A 1px `--hair` rule separates beats and
-the footer. The snippet is marked by a single left border in
-`rgba(203,160,83,0.22)` — one edge, not four. The eyebrow's divider is a `1.5rem × 1px`
-Deep Ochre rule rather than a slash character, so it rhymes with the beat rules.
-
-The specimen's reticles are the sharpest expression of this: **corner ticks, not
-frames**. Each region is a 1px `rgba(233,225,209,0.34)` box whose `::before` /
-`::after` draw 5×5px gold L-brackets at opposing corners, breathing between 0.16 and
-0.46 alpha on a 5.5s alternating cycle with staggered negative delays. It reads as a
-measurement being taken, not as a box around something.
+Structure, where it exists at all, is drawn with **lines, not boxes**: the copy
+button is marked off by a single `rgba(203,160,83,0.18)` border on one side. Four
+borders make a card, and there are no cards here.
 
 ### Named Rules
 
-**The One Edge Rule.** When something needs marking off, mark one side. A left border,
-a top rule, two corner ticks. Four borders make a card, and there are no cards here.
+**The One Edge Rule.** When something needs marking off, mark one side.
 
 ## Components
-
-### Buttons
-
-There is exactly one button in the system, and it is a text button.
-
-- **Shape:** square (`0` radius), separated from its field by a single
-  `rgba(203,160,83,0.18)` left border rather than a background.
-- **Copy (primary action label):** Patina Gold (`#a28757`) mono at `0.75rem`,
-  `0.08em` tracking, transparent background, `0 1.1rem` padding, full-height.
-- **Hover:** label to Halo Gold, background to `rgba(203,160,83,0.08)` over
-  `0.2s var(--ease)`. The wash is a breath of light, not a fill.
-- **Focus:** `2px solid var(--gold)` outline at `-2px` offset so the ring sits inside
-  the row's own border rather than doubling it.
-- **Press:** `scale(0.94)` on a stiff spring (stiffness 500, damping 30).
-- **State label:** the text itself is the feedback — `copy` → `copied` → back after
-  2000ms, or `select it` when the clipboard is unavailable. The label *swaps*
-  (`AnimatePresence mode="wait"`, y ±6px, 160ms) rather than cross-fading in place, so
-  the width change doesn't jitter mid-transition. There is no icon, no toast, no
-  checkmark.
 
 ### Install Row (signature)
 
 The page's primary call to action and the only lifted object in the system.
 
-- **Corner style:** `10px`.
+- **Corner style:** `10px`. **Width:** 100%, `max-width: 30rem`, centred.
 - **Background:** `linear-gradient(180deg, rgba(37,31,24,0.72), rgba(11,9,8,0.82))`
   with `backdrop-filter: blur(14px) saturate(120%)`.
 - **Border:** `1px solid rgba(203,160,83,0.2)`, warming to `0.34` on hover over `0.3s`.
@@ -442,76 +327,71 @@ The page's primary call to action and the only lifted object in the system.
 - **Internal padding:** `0.85rem 0.5rem 0.85rem 1rem` on the command; the button
   carries its own.
 - **Behaviour:** the command is real, selectable `<code>` with a gold `$` prompt
-  (`user-select: none`) and horizontal overflow with scrollbars hidden. Below `30rem`
-  the row stacks and the button's border moves from left to top. Below `22rem` type
-  size is traded down so the whole command is visible — a half-shown install command
-  reads as broken.
+  (`user-select: none`) and horizontal overflow with scrollbars hidden in both
+  engines. Below `30rem` the row stacks and the button's border moves from left to
+  top. Below `22rem` type size is traded down — a half-shown install command reads
+  as broken.
 
-### Snippet
+### Buttons
 
-- **Style:** one left border in `rgba(203,160,83,0.22)`, background
-  `rgba(18,16,13,0.5)`, `0` radius, `--s-2 --s-3` padding, Mono `0.75rem` / 1.7 in
-  Veiled Ivory.
-- **Detail:** gold `$` prompt, Muted Ivory continuation lines, `overflow-x: auto` with
-  the scrollbar hidden in both engines.
+There is exactly one button in the system, and it is a text button.
 
-### Spec List
+- **Shape:** square (`0` radius), separated from its field by a single
+  `rgba(203,160,83,0.18)` left border rather than a background.
+- **Copy (primary action label):** Patina Gold mono at `0.75rem`, `0.08em` tracking,
+  transparent background, `0 1.1rem` padding, full-height.
+- **Hover:** label to Halo Gold, background to `rgba(203,160,83,0.08)` over `0.2s
+  var(--ease)`. The wash is a breath of light, not a fill.
+- **Focus:** `2px solid var(--gold)` at `-2px` offset so the ring sits inside the
+  row's own border rather than doubling it.
+- **Press:** `scale(0.94)` on a stiff spring (stiffness 500, damping 30).
+- **State label:** the text itself is the feedback — `copy` → `copied` → back after
+  2000ms, or `select it` when the clipboard is unavailable (the command is then left
+  selected, so the keyboard shortcut is one step away). The label *swaps*
+  (`AnimatePresence mode="wait"`, y ±6px, 160ms) rather than cross-fading in place,
+  so the width change doesn't jitter. No icon, no toast, no checkmark.
 
-- **Style:** an unstyled `<ul>` as a two-column grid (`5rem | minmax(0,1fr)`,
-  `4.25rem` below 30rem), baseline-aligned, `--s-1` row gap.
-- **Key:** the mono label voice in Patina Gold. **Value:** Sans `0.875rem` in Veiled
-  Ivory. No bullets, no rules, no table chrome — alignment alone does the work.
+### The Platform Line
 
-### Navigation
+One mono label under the command: `MACOS & LINUX`. It replaced a four-line status
+paragraph covering checksums, architectures and renderer prerequisites — on a page
+whose whole argument is one command, that footnote was the largest block of text on
+screen. Everything it said now lives in `sfumato renderer doctor` and the docs.
 
-- **Style:** the mono label voice in Muted Ivory, undecorated, `0.2rem 0` padding.
-- **Hover:** text to Lit Ivory, plus a 1px Halo Gold underline that wipes in from the
-  left (`transform: scaleX(0 → 1)`, `transform-origin: left`, `0.28s var(--ease)`).
-- **Focus:** `2px solid var(--gold)` at `4px` offset, `2px` radius.
-- **Layout:** a wrapping flex row, `0.35rem 1.5rem` gap. There is no site nav and no
-  header — the footer link row is the only navigation.
+### The Portrait (signature)
 
-### The Mark (signature)
+Salvator Mundi, cut out and dissolved into the ground.
 
-`EpicycleMark` — the S of *sfumato* drawn as an integral sign, reconstructed from its
-own Fourier series and rendered as an ASCII coverage field on a 2D canvas.
+- **Source:** `/img/salvator-bust.webp`, an 820×912 cutout with real alpha.
+- **Frame:** `clamp(190px, 30vw, 300px)`, `margin-bottom: -1.25rem`.
+- **Mask:** `linear-gradient(180deg, #000 0%, #000 44%, transparent 100%)` — see the
+  No Edges Rule for why the fade must end at exactly `100%`.
+- **Opacity:** `0.82`. The scan is brighter than this ground, and the wordmark has
+  to stay the brightest thing on the page.
+- **Not framed imagery.** No border, no card, no caption, no lightbox. The painting
+  is ground, not illustration.
 
-- **Frame:** `clamp(240px, 24vw, 330px)` at `3 / 4`. The floor is generous because
-  below ~240px the character grid is too coarse to hold the terminal hooks together.
-- **Grid:** 8px cells, ramp `. : - = + * # @`, letter occupying 62% of the frame.
-- **Colour:** mixes between Halo Gold, Lit Ivory and Varnished Lapis — the only place
-  slate appears.
-- **Motion:** a 6000ms revolution that **never stops**. The first pass reveals the
-  letter as the pen reaches each cell; afterwards the letter stands complete and the
-  chain keeps orbiting with a travelling point of heat (decay 0.935/frame, radius 2.2
-  cells) at the pen. A one-shot animation would make the epicycles invisible to anyone
-  arriving a few seconds late, which defeats the point of showing them. The loop pauses
-  off-screen and on hidden tabs; clicking replays the reveal.
-- **Parallax:** ±10px pointer-led drift on springs (stiffness 60, damping 18, mass
-  0.6) so it lags and settles rather than snapping. Disabled for coarse pointers and
-  reduced motion.
+### The Link Row
 
-### The Specimen (signature)
+Three destinations, no words: source (`github.com/getsfumato/sfumato`), docs
+(`docs.sfumato.sh`), vitruvio (`vitruvio.sfumato.sh`).
 
-`SpecimenPlate` — Salvator Mundi lifted off his ground and measured.
-
-- **Stage:** `max-width: 26rem` (`24rem` below 44rem), aspect `820 / 912`, over a warm
-  radial light pool.
-- **Layering:** a plain `<img>` paints first and a Three.js canvas cross-fades over it
-  at `700ms` once ready. Five regions quantise into blocks via an unrolled shader loop,
-  cross-fading *colours* rather than coordinates — mixing coordinates smears a region
-  toward its block centres instead of dissolving into them.
-- **Instrumentation:** DOM, not shader, because 9px type must stay crisp. Corner-tick
-  reticles, `rgba(233,225,209,0.18)` leader lines, and tabular readouts carrying real
-  measured μ (mean luminance) and ∇ (mean gradient magnitude) values.
-- **No legend.** A machine peering at a Leonardo is the whole idea; captioning it
-  turned the conceit into a lecture. The numbers are for whoever reads the source.
-- **Reveal:** wipes in from the foot; `uReveal` deliberately finishes above 1.0,
-  because a window ending at exactly 1.0 closes again as the value passes it.
-- **Reciprocity:** the ambient field dims to 30% while the specimen is on screen
-  (IntersectionObserver, `-35% 0px -35% 0px` root margin — a ratio threshold cannot
-  work on a section taller than the viewport). Two Leonardos at full strength at once
-  read as a duplicate.
+- **Hit area:** 44px square, `10px` radius, glyph 22px inside it. The row stays quiet
+  without becoming a target you have to aim at.
+- **Colour:** Muted Ivory at rest; Halo Gold with a `rgba(203,160,83,0.08)` wash on
+  hover. Focus: `2px solid var(--gold)` at `2px` offset.
+- **Accessible name:** `aria-label` + `title` on the anchor. No visible text — the
+  glyphs are the whole row.
+- **Optical weight:** GitHub is solid because its mark only reads as itself filled;
+  the other two are `1.4`-unit strokes on the same 24-unit box, which lands at a
+  comparable ink density at 22px.
+- **The vitruvian glyph** is a circle, a figure, arms to the rim and legs apart. The
+  square of the original sheet and the second raised pair of arms were both drawn and
+  both cut: the square's top edge lands within a pixel of the circle at icon size and
+  the pair of arm-pairs turns the figure to mud. What is left is the part that still
+  reads.
+- **The docs glyph** is the favicon's pixel S, unchanged, on the same box — see the
+  Pixel Echo Rule.
 
 ### The Ground (signature)
 
@@ -521,18 +401,25 @@ single fragment shader: one draw call, one full-screen quad, pixel ratio capped 
 
 - **Progressive enhancement is a requirement, not an optimisation.** CSS plates paint
   on the server render and stay if WebGL is unavailable; the GL layer fades in over
-  them (`900ms`) only once it has textures and has drawn a frame.
+  them (`900ms`) only once it has textures and has drawn a frame. The two layers'
+  strengths are kept in sync by hand — a change to one is a change to both.
+- **Salvator is held down** (plate amount `0.46`, CSS opacity `0.30`, against `1.08`
+  for the Virgin): the same painting is the portrait in the centre of the page, and
+  two legible faces read as a duplicate rather than as a motif.
+- **The Baptism is held down too** (`0.58`, CSS `0.34`) and pushed lower: at full
+  strength its warm floor glow reached the icon row and made the bottom of the page
+  brighter than the wordmark.
 - **Flow** is layered sines rather than turbulence — periodic and cheap, but at this
   amplitude it reads as the paintings breathing, which is all it needs to do.
 - **Reduced motion** freezes flow and grain to a single static composition.
 - **`prefers-contrast: more`** drops plate opacity to 0.16 and the GL layer to 0.3,
-  and promotes prose to Lit Ivory.
+  and promotes the lede to Lit Ivory.
 
 ### Reveal
 
 - Entrance is **CSS keyframes, never JavaScript**: `opacity 0 → 1`,
   `translateY(14px) → 0`, `blur(7px) → 0` over `1.1s var(--ease)` with `both` fill and
-  a per-element `--reveal-delay`.
+  a per-element `--reveal-delay` (0.05 / 0.20 / 0.32 / 0.44 / 0.58s down the column).
 - This is an invariant with a cause. An entrance that starts at `opacity: 0` decides
   whether content is visible at all, so it must not depend on JS — a `motion.div` with
   `initial={{ opacity: 0 }}` server-renders the hidden state inline, and anything that
@@ -550,51 +437,44 @@ visible.
 
 ### Do:
 
+- **Do** keep the page to one screen and one action. New material goes to the docs.
 - **Do** keep every dark value warmer than neutral — more red than blue, in the
   `#080706` / `#0b0908` / `#12100d` family.
-- **Do** ration Halo Gold (`#cba053`) to thin strokes, small marks and single glyphs.
-  If a gold region reads as a shape, reduce it.
+- **Do** ration Halo Gold to thin strokes, small marks and single glyphs. If a gold
+  region reads as a shape, reduce it.
 - **Do** size every Pixel occurrence as an exact multiple of the `0.6875rem` cell, and
-  make it recur at least three times per surface.
-- **Do** give every mono label the same size, uppercase, and `0.16em` tracking.
-- **Do** let the grid column set the measure and leave `.prose` without a `max-width`.
-- **Do** mark structure with one edge — a left border, a top hairline, two corner ticks.
+  keep the three pixel forms (wordmark, favicon, docs icon) the same letter.
+- **Do** end every image mask at zero alpha on its last row.
 - **Do** produce depth with masks, screen blending, gradients and pools of light.
 - **Do** author any content-hiding entrance as CSS keyframes with `animation-fill-mode:
   both`.
-- **Do** ship a server-rendered fallback beneath every GL layer, and freeze motion
-  under `prefers-reduced-motion`.
-- **Do** measure any number that appears on screen, from the pixels actually underneath
-  it, and use `tabular-nums` wherever digits change.
+- **Do** ship a server-rendered fallback beneath the GL layer, and freeze motion under
+  `prefers-reduced-motion`.
+- **Do** draw a new icon against the real thing at 20, 28, 64 and 140px, and cut
+  whatever stops reading at the smallest size.
 
 ### Don't:
 
+- **Don't** add a section, a feature list, a testimonial row or a footer. The page has
+  one screen; the argument for a second one is an argument for a docs page.
 - **Don't** import generic dark-SaaS chrome: no violet or blue gradient buttons, no
   glass cards in rows, no neon borders, no purple-on-black. A cool accent destroys the
   warm-earth identity instantly, and this palette was sampled rather than chosen — it
   is not a preference to be traded.
 - **Don't** add a fourth type voice, and don't let an existing face take another's job.
-  Sans never becomes chrome, Mono never sets prose, Pixel never appears outside the
-  wordmark and the enumeration.
 - **Don't** present the paintings as framed imagery — no bordered image, card,
-  carousel, lightbox, or museum caption. They are ground and specimen, masked and
-  dissolved. Any visible rectangular image edge is a defect.
-- **Don't** invent numbers. No fabricated metrics, confidence scores, percentages, or
-  decorative readouts. The specimen's μ and ∇ are real; a plausible-looking substitute
-  would have been easier and would have meant nothing.
+  carousel, lightbox or museum caption. Any visible rectangular image edge is a defect.
+- **Don't** raise the background's Salvator or Baptism plates back to full strength;
+  the portrait is the same painting and the icons sit over the Baptism's glow.
+- **Don't** invent numbers. No fabricated metrics, confidence scores or decorative
+  readouts. If a value appears on screen it is measured.
 - **Don't** clip a gradient into text, on the wordmark or anywhere else. Gold is light;
-  emphasis comes from size, weight, and the glow.
-- **Don't** put a label above or beneath a heading to introduce it. The heading carries
-  its own weight, and the slot fills with decoration every time it exists — it held a
-  harmonic count measuring the logo before it was removed.
-- **Don't** let any text colour fall below Faint Ivory (`#827b6a`, 4.7:1). That value is
-  the floor, not a starting point to tune downward from.
+  emphasis comes from size, weight and the glow.
+- **Don't** let the sentence under the name grow past two lines at desktop width.
 - **Don't** use `box-shadow` to raise an element. The install row's lift is a recorded
   outlier, not a precedent.
-- **Don't** wrap a region in a background, card, or panel to separate it. Hairline plus
-  rhythm, or the rhythm is wrong.
-- **Don't** put a second `max-width` inside an already-narrow grid column.
+- **Don't** wrap a region in a background, card or panel to separate it.
 - **Don't** drive an entrance from JavaScript, and don't use `motion` for anything whose
   start state is `opacity: 0`.
-- **Don't** shrink the mark's frame below 240px, or the terminal hooks break apart.
-- **Don't** caption a flourish. If a conceit needs a legend to land, it is a lecture.
+- **Don't** put a label above the wordmark to introduce it. That slot has been filled
+  with decoration every time it existed.
