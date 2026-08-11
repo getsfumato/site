@@ -128,14 +128,16 @@ verify() {
 
 # ---- cargo fallback -------------------------------------------------------
 
-# Builds from the repository rather than from crates.io: sfumato is not
-# published there yet. Switch to `cargo install sfumato --locked` once it is.
+# Builds from crates.io rather than from the repository: the published crate is a
+# small tarball from the CDN instead of a full clone, it is version-pinnable, and it
+# ships Cargo.lock so `--locked` means something. Verified against a clean cache
+# before this replaced `cargo install --git`.
 cargo_fallback() {
   say ''
   if need cargo; then
     step "no prebuilt binary for this platform — building from source"
     dim "this takes a few minutes"
-    cargo install --git "https://github.com/$REPO" --locked "$BIN"
+    cargo install "$BIN" --locked
     say ''
     say "  installed $BIN via cargo"
     exit 0
@@ -144,7 +146,7 @@ cargo_fallback() {
 
   Install Rust, then build from source:
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    cargo install --git https://github.com/$REPO --locked $BIN"
+    cargo install $BIN --locked"
 }
 
 # ---- main -----------------------------------------------------------------

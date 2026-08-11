@@ -365,10 +365,9 @@ and then failed on every run with `GLIBC_2.35 not found` — a failure that poin
 nowhere near the installer. Raise `GLIBC_FLOOR` only when the runner image in
 `release.yml` changes.
 
-> `sfumato` is not on crates.io yet, so `cargo_fallback()` still builds with
-> `cargo install --git`. Once it is published, and once
-> `cargo install sfumato --locked --version <v>` has been verified from a clean
-> cache, simplify it.
+`cargo_fallback()` builds from crates.io (`cargo install sfumato --locked`), which
+is a small CDN tarball rather than a full clone and ships a lockfile so `--locked`
+means something.
 
 ## Deploy
 
