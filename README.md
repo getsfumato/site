@@ -369,6 +369,29 @@ nowhere near the installer. Raise `GLIBC_FLOOR` only when the runner image in
 is a small CDN tarball rather than a full clone and ships a lockfile so `--locked`
 means something.
 
+## The page-plugin registry
+
+`public/page-plugin-registry.json` is fetched by the installed CLI to discover page
+plugins. It is served from here, not from a branch of
+[getsfumato/sfumato](https://github.com/getsfumato/sfumato), because it is a **trust
+root**: each entry carries both the URL a plugin is downloaded from and the `sha256`
+that validates it, so whoever can write this file can make an installed CLI fetch
+and execute arbitrary JavaScript into a user's page. A deliberate deploy is a better
+gate for that than a push to the branch the code repository works on daily.
+
+It is a copy of `crates/sfumato-adapters/assets/page-plugin-registry.json`, which is
+compiled into the binary as the last-resort fallback. **The two can drift, and
+nothing enforces otherwise.** That is tolerable in one direction only: this file may
+be *ahead* of the compiled-in copy — correcting a URL or a hash for binaries already
+installed is the reason it is fetched at all — and it must never be behind, or a
+plugin the binary already knows about disappears.
+
+Entries are append-only. Old binaries keep reading this file, so removing or
+renumbering one breaks them.
+
+When changing the registry, change it in the code repository first, then copy it
+here.
+
 ## Deploy
 
 Vercel, zero config. `next.config.mjs` sets `install.sh` to `text/plain` so it
