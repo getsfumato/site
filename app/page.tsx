@@ -2,6 +2,7 @@ import InstallCommand from '@/components/InstallCommand';
 import LinkRow from '@/components/LinkRow';
 import PaintingField from '@/components/PaintingField';
 import Reveal from '@/components/Reveal';
+import SpecimenPlate from '@/components/SpecimenPlate';
 
 /**
  * One screen, one action.
@@ -12,10 +13,18 @@ import Reveal from '@/components/Reveal';
  * command or follows a link, and the old three-beat descent was in the way of
  * both.
  *
- * Salvator carries the identity now that the epicycle mark is gone. He is the
- * page's own argument for its name: the bust is a cutout on black, dissolved at
- * the bottom edge into the ground it sits on, so there is no line between figure
- * and dark — which is what sfumato means.
+ * Salvator carries the identity now that the epicycle mark is gone, and he is
+ * still the measured specimen: the page samples five regions of the painting and
+ * reports what it finds. That is the product's argument in one object — a machine
+ * looking very closely at gradation it cannot draw a line through — so the plate
+ * moved to the top of the page rather than being deleted with the beats it used
+ * to sit in.
+ *
+ * The plate's shader is also the only thing that removes the crop. The bust runs
+ * off its own edges on three sides, so alpha is fully opaque at the boundary and a
+ * plain image element reads as a rectangle sitting in the page; the dissolve has to
+ * happen per-pixel, which is why the fallback image carries a radial mask of its
+ * own until the GL layer takes over.
  */
 export default function Home() {
   return (
@@ -24,16 +33,7 @@ export default function Home() {
 
       <main className="stage">
         <Reveal className="portrait" delay={0.05}>
-          {/* eslint-disable-next-line @next/next/no-img-element -- unoptimized on
-              purpose: this is a static export, and the source webp is already the
-              size it renders at */}
-          <img
-            src="/img/salvator-bust.webp"
-            alt="Salvator Mundi, Leonardo da Vinci"
-            width={820}
-            height={912}
-            decoding="async"
-          />
+          <SpecimenPlate />
         </Reveal>
 
         <Reveal delay={0.2}>

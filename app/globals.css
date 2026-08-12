@@ -45,11 +45,12 @@
   /* the mono cell. every Pixel size is a multiple of it. */
   --cell: 0.6875rem; /* 11px */
 
+  /* four steps, all of them in use; the page is one screen and has nothing left
+     that needs a fifth */
   --s-1: 0.5rem;
   --s-2: 0.75rem;
   --s-3: 1.25rem;
   --s-4: 2rem;
-  --s-5: 3.25rem;
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -205,7 +206,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: var(--s-3);
-  padding: var(--s-5) clamp(1.25rem, 5vw, 2rem);
+  /* s-4 rather than s-5 top and bottom: the specimen plate spends the height that
+     the old, image-only hero could afford to leave as air. */
+  padding: var(--s-4) clamp(1.25rem, 5vw, 2rem);
   text-align: center;
 }
 
@@ -236,29 +239,169 @@ body {
   animation-delay: var(--reveal-delay, 0s);
 }
 
-/* ---------- the portrait ------------------------------------------------ */
+/* ---------- the portrait: Salvator, measured ---------------------------- */
 
-/* Salvator Mundi, cut out and dissolved into the ground at the bottom edge so
-   there is no line between the figure and the dark it stands in. He is behind
-   the wordmark's own optical space, not above it: the negative margin lets the
-   name sit into the base of the bust rather than under a gap. */
+/* The frame the specimen plate renders into. Wider than the old in-page plate's
+   floor because the reticle readouts are 9px mono and have to stay legible, and
+   the negative margin lets the wordmark sit into the base of the bust rather than
+   under a gap.
+
+   No mask on this wrapper: the reticle labels are DOM children, and a fade across
+   the bottom of the frame would take the collar region's readout with it. The
+   figure's own edges are dissolved per-pixel in the shader instead. */
 .portrait {
-  width: clamp(190px, 30vw, 300px);
+  /* Sized against the viewport's *height* as well as its width. The plate is the
+     tallest object in the column by a wide margin (its aspect is 820/912), so a
+     width-only clamp is what pushed the icon row below the fold on a 757px-tall
+     window. The `vh` term is the binding one on a laptop; the `vw` clamp takes
+     over on a tall narrow phone. */
+  width: min(clamp(200px, 28vw, 300px), 36vh);
   margin-bottom: calc(var(--s-3) * -1);
-  /* the fade has to reach zero at the very last row: stopping at 94% left the
-     bottom 6% of the crop visible as a straight edge across the robe, which is
-     the one thing this image must not have. */
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 44%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 44%, transparent 100%);
 }
 
-.portrait img {
-  display: block;
+.specimen {
+  margin: 0;
   width: 100%;
-  height: auto;
-  /* the scan is brighter than this ground; pulling it back keeps the wordmark
-     the brightest thing on the page */
-  opacity: 0.82;
+}
+
+.specimen__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 820 / 912;
+  /* a warm pool of light under the figure, so it does not read as pasted on */
+  background: radial-gradient(58% 46% at 50% 46%, rgba(148, 103, 18, 0.16), transparent 72%);
+}
+
+/* the base image element and the GL canvas occupy the same box; the canvas takes
+   over once it is ready */
+.specimen__base,
+.specimen__gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 700ms var(--ease);
+}
+
+/* The server-rendered fallback. It carries a radial mask that the in-page version
+   of this plate never needed: there, the plate sat inside a beat and the crop's
+   straight edges were only visible for the few hundred ms before WebGL took over.
+   At the top of the page it is the first thing anyone sees, and alpha cannot
+   remove a crop — the bust runs off its own boundary at the foot and both flanks.
+   The shader still does this properly, per-pixel; this is the honest static
+   approximation underneath it. */
+.specimen__base {
+  object-fit: contain;
+  opacity: 1;
+  -webkit-mask-image: radial-gradient(84% 66% at 50% 40%, #000 52%, transparent 100%);
+  mask-image: radial-gradient(84% 66% at 50% 40%, #000 52%, transparent 100%);
+}
+
+.specimen__base[data-hidden='true'] {
+  opacity: 0;
+}
+
+.specimen__gl {
+  opacity: 0;
+}
+
+.specimen__gl[data-ready='true'] {
+  opacity: 1;
+}
+
+.specimen__gl canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.specimen__marks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.specimen__wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.specimen__wires line {
+  stroke: rgba(233, 225, 209, 0.18);
+  stroke-width: 1;
+}
+
+.specimen__box {
+  position: absolute;
+  border: 1px solid rgba(233, 225, 209, 0.34);
+  animation: reticle 5.5s var(--ease) infinite alternate;
+}
+
+.specimen__box:nth-child(3) { animation-delay: -0.9s; }
+.specimen__box:nth-child(4) { animation-delay: -1.9s; }
+.specimen__box:nth-child(5) { animation-delay: -2.8s; }
+.specimen__box:nth-child(6) { animation-delay: -3.7s; }
+
+@keyframes reticle {
+  from { border-color: rgba(233, 225, 209, 0.16); }
+  to   { border-color: rgba(233, 225, 209, 0.46); }
+}
+
+/* corner ticks rather than a full frame — reads as a measurement, not a box */
+.specimen__box::before,
+.specimen__box::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--gold);
+  opacity: 0.55;
+}
+
+.specimen__box::before {
+  top: -1px;
+  left: -1px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.specimen__box::after {
+  right: -1px;
+  bottom: -1px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.specimen__label {
+  position: absolute;
+  bottom: calc(100% + 3px);
+  display: flex;
+  gap: 0.5em;
+  align-items: baseline;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.04em;
+  /* tabular so the digits do not shuffle sideways as they change */
+  font-variant-numeric: tabular-nums;
+  color: var(--ivory-dim);
+  text-shadow: 0 1px 4px rgba(8, 7, 6, 0.9);
+}
+
+.specimen__label[data-side='left'] {
+  left: 0;
+}
+
+.specimen__label[data-side='right'] {
+  right: 0;
+  justify-content: flex-end;
+}
+
+.specimen__block {
+  color: var(--gold-dim);
 }
 
 /* ---------- the name ---------------------------------------------------- */
@@ -431,8 +574,10 @@ body {
     transition-duration: 0.01ms !important;
   }
 
-  /* no fade-up; the content is simply there */
-  .reveal {
+  /* no fade-up; the content is simply there. The reticles stop breathing too —
+     the plate's own loop already freezes to a single static composition. */
+  .reveal,
+  .specimen__box {
     animation: none;
   }
 }
