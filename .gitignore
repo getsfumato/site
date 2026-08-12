@@ -13,3 +13,8 @@ next-env.d.ts
 # local-only impeccable state; DESIGN.md and .impeccable/design.json are tracked
 .impeccable/hook.cache.json
 .impeccable/config.local.json
+
+# per-machine agent hook wiring: these hold absolute paths into a developer's own
+# home directory, so they are personal setup rather than project config
+.codex/
+.cursor/
