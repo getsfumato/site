@@ -474,7 +474,7 @@ on the page and the only thing on it that moves on its own.
 ### The Link Row
 
 Three destinations, no words: source (`github.com/getsfumato/sfumato`), docs
-(`docs.sfumato.sh`), vitruvio (`vitruvio.sfumato.sh`).
+(`docs.sfumato.sh`), vitruvio (`vitruvio.sh`).
 
 - **Hit area:** 44px square, `10px` radius, glyph 22px inside it. The row stays quiet
   without becoming a target you have to aim at.

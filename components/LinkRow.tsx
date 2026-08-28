@@ -70,7 +70,7 @@ function VitruvioMark() {
 const LINKS = [
   { href: 'https://github.com/getsfumato/sfumato', label: 'Source on GitHub', Mark: GithubMark },
   { href: 'https://docs.sfumato.sh', label: 'Documentation', Mark: SfumatoMark },
-  { href: 'https://vitruvio.sfumato.sh', label: 'Vitruvio', Mark: VitruvioMark },
+  { href: 'https://vitruvio.sh', label: 'Vitruvio', Mark: VitruvioMark },
 ] as const;
 
 export default function LinkRow() {
